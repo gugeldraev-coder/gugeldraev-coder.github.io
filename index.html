@@ -125,6 +125,10 @@
         }
         .gallery-item:hover .gallery-overlay { opacity: 1; }
 
+        .ratio-9x16 {
+            --bs-aspect-ratio: 177.7777777778%; /* 16/9 * 100, jadi portrait 9:16 */
+        }
+
         /* New Styles for Captions below images */
         .img-caption {
             text-align: center;
@@ -190,25 +194,19 @@
     <section class="py-5">
         <div class="container">
             <div class="row g-4">
-                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
-                    <div class="usp-card">
-                        <i class="fa-solid fa-gem"></i>
-                        <h5>Harga Langsung Tambang</h5>
-                    </div>
-                </div>
-                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="usp-card">
                         <i class="fa-solid fa-warehouse"></i>
                         <h5>Stok Selalu Ready</h5>
                     </div>
                 </div>
-                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="usp-card">
                         <i class="fa-solid fa-compass-drafting"></i>
                         <h5>Pengerjaan Presisi</h5>
                     </div>
                 </div>
-                <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
                     <div class="usp-card">
                         <i class="fa-solid fa-user-tie"></i>
                         <h5>Tenaga Ahli 10+ Thn</h5>
@@ -284,16 +282,42 @@
             <h2 class="section-title text-white">Portofolio Proyek</h2>
             <div class="row g-4">
                 <div class="col-md-4">
-                    <img src="proyek-1.jpg" class="img-fluid rounded shadow" alt="Ruang Tamu Luxury">
-                    <h6 class="portfolio-caption text-light">Proyek Ruang Tamu Luxury Residence</h6>
+                    <div class="ratio ratio-9x16 rounded shadow overflow-hidden">
+                    <iframe
+                        src="https://www.youtube.com/embed/DUYozdKxH3I?si=NW46Ic-Mu9ExD5z3"
+                        title="Proyek Ruang Tamu Luxury"
+                        allowfullscreen
+                    ></iframe>
+                    </div>
+                    <h6 class="portfolio-caption text-light mt-2">
+                    Proyek Ruang Tamu Luxury Residence
+                    </h6>
                 </div>
+
                 <div class="col-md-4">
-                    <img src="proyek-2.jpg" class="img-fluid rounded shadow" alt="Kamar Mandi Hotel">
-                    <h6 class="portfolio-caption text-light">Instalasi Marmer Kamar Mandi Hotel</h6>
+                    <div class="ratio ratio-9x16 rounded shadow overflow-hidden">
+                    <iframe
+                        src="https://www.youtube.com/embed/tbKhT0G9I20?si=7tlhmShtRUvPHaXO"
+                        title="Instalasi Marmer Kamar Mandi Hotel"
+                        allowfullscreen
+                    ></iframe>
+                    </div>
+                    <h6 class="portfolio-caption text-light mt-2">
+                    Instalasi Marmer Kamar Mandi Hotel
+                    </h6>
                 </div>
+
                 <div class="col-md-4">
-                    <img src="proyek-3.jpg" class="img-fluid rounded shadow" alt="Lantai Masjid Agung">
-                    <h6 class="portfolio-caption text-light">Pengerjaan Lantai Masjid Agung</h6>
+                    <div class="ratio ratio-9x16 rounded shadow overflow-hidden">
+                    <iframe
+                        src="https://www.youtube.com/embed/Y7kXyWqg078?si=mw3KRsaGmwjF_W52"
+                        title="Pengerjaan Lantai Masjid Agung"
+                        allowfullscreen
+                    ></iframe>
+                    </div>
+                    <h6 class="portfolio-caption text-light mt-2">
+                    Pengerjaan Lantai Masjid Agung
+                    </h6>
                 </div>
             </div>
         </div>
@@ -313,7 +337,7 @@
                         <h5 class="fw-bold mb-3"><i class="fa-solid fa-clock text-gold"></i> Jam Operasional</h5>
                         <ul class="list-unstyled">
                             <li class="d-flex justify-content-between mb-2"><span>Senin - Sabtu:</span> <strong>08.00 - 17.00</strong></li>
-                            <li class="d-flex justify-content-between"><span>Minggu:</span> <strong>By Appointment</strong></li>
+                            <li class="d-flex justify-content-between"><span>Minggu:</span> <strong>Chat WhatsApp Dulu</strong></li>
                         </ul>
                         <hr>
                         <h5 class="fw-bold mb-3"><i class="fa-solid fa-location-dot text-gold"></i> Alamat</h5>
@@ -347,5 +371,4 @@
         AOS.init({ duration: 1000, once: true });
     </script>
 </body>
-
 </html>
