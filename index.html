@@ -3,372 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lestari Marmer Granit | Keindahan Abadi & Mewah</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Griya Mandiri Grosir | Belanja Lebih Hemat, Untung Lebih Banyak!</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-    <style>
-        :root {
-            --luxury-gold: #D4AF37;
-            --soft-cream: #FDFBF7;
-            --deep-dark: #1a1a1a;
-            --text-gray: #555;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #fff;
-            color: var(--deep-dark);
-            scroll-behavior: smooth;
-        }
-
-        h1, h2, h3, h4, h5, .navbar-brand {
-            font-family: 'Playfair Display', serif;
-        }
-
-        /* --- Navbar --- */
-        .navbar {
-            background: rgba(255, 255, 255, 0.95);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 15px 0;
-        }
-        .navbar-brand {
-            font-size: 1.5rem;
-            color: var(--luxury-gold) !important;
-            letter-spacing: 1px;
-        }
-        .nav-link {
-            font-weight: 500;
-            color: var(--deep-dark) !important;
-            margin: 0 10px;
-            transition: 0.3s;
-        }
-        .nav-link:hover { color: var(--luxury-gold) !important; }
-        .btn-gold-outline {
-            border: 1px solid var(--luxury-gold);
-            color: var(--luxury-gold);
-            padding: 8px 20px;
-            transition: 0.3s;
-            text-decoration: none;
-        }
-        .btn-gold-outline:hover {
-            background: var(--luxury-gold);
-            color: white;
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            height: 90vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hero-marmer.jpg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            color: white;
-        }
-        .hero h1 { font-size: 4rem; margin-bottom: 20px; }
-        .btn-gold {
-            background: var(--luxury-gold);
-            color: white;
-            padding: 15px 35px;
-            font-weight: 600;
-            border: none;
-            transition: 0.3s;
-            text-decoration: none;
-        }
-        .btn-gold:hover { background: #b8962d; transform: translateY(-3px); }
-
-        /* --- USP Section --- */
-        .usp-card {
-            padding: 40px 20px;
-            text-align: center;
-            border: 1px solid transparent;
-            transition: 0.3s;
-        }
-        .usp-card i { font-size: 2.5rem; color: var(--luxury-gold); margin-bottom: 20px; }
-        .usp-card:hover { border: 1px solid var(--luxury-gold); background: var(--soft-cream); }
-
-        /* --- Products & Services --- */
-        .section-title { position: relative; padding-bottom: 15px; margin-bottom: 50px; }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 50%;
-            transform: translateX(-50%);
-            width: 80px; height: 2px;
-            background: var(--luxury-gold);
-        }
-        .service-box {
-            background: var(--soft-cream);
-            padding: 30px;
-            border-radius: 5px;
-            height: 100%;
-        }
-
-        /* --- Gallery & Products Styles --- */
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 8px;
-        }
-        .gallery-item img { transition: 0.5s; width: 100%; height: 300px; object-fit: cover; }
-        .gallery-item:hover img { transform: scale(1.1); }
-        .gallery-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(212, 175, 55, 0.5);
-            display: flex; align-items: center; justify-content: center;
-            opacity: 0; transition: 0.3s; color: white;
-        }
-        .gallery-item:hover .gallery-overlay { opacity: 1; }
-
-        .ratio-9x16 {
-            --bs-aspect-ratio: 177.7777777778%; /* 16/9 * 100, jadi portrait 9:16 */
-        }
-
-        /* New Styles for Captions below images */
-        .img-caption {
-            text-align: center;
-            margin-top: 20px;
-            font-weight: 700;
-            color: var(--deep-dark);
-        }
-        .portfolio-caption {
-            text-align: center;
-            margin-top: 15px;
-            font-weight: 600;
-            color: var(--text-gray);
-            font-family: 'Montserrat', sans-serif; /* Keep portfolio titles simpler */
-        }
-
-        /* --- Floating WA --- */
-        .float-wa {
-            position: fixed;
-            bottom: 30px; right: 30px;
-            background: #25d366;
-            color: white;
-            width: 60px; height: 60px;
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 30px; z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            text-decoration: none;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-        }
-    </style>
+    <script src="script.js"></script>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#">LESTARI MARMER</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link" href="#produk">Produk</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#jasa">Jasa</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#galeri">Galeri</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#lokasi">Lokasi</a></li>
-                </ul>
-                <a href="https://wa.me/6281319086883?text=Halo+Lestari+Marmer,+saya+ingin+minta+penawaran." class="btn-gold-outline">Minta Penawaran</a>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <span class="logo-accent">GRIYA</span> MANDIRI
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="nav-list">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#produk">Produk</a></li>
+                <li><a href="#tentang">Tentang Kami</a></li>
+                <li><a href="#promo">Promo</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="https://wa.me/6281234567890" class="btn btn-primary-sm">Chat Admin</a>
             </div>
         </div>
     </nav>
 
-    <header class="hero text-center">
-        <div class="container" data-aos="fade-up">
-            <h1 class="fw-bold">Keindahan Abadi <br> dalam Setiap Kilau Marmer</h1>
-            <p class="lead mb-5">Menyediakan Marmer, Granit, dan Quadra Kualitas Premium untuk Hunian Mewah Anda.</p>
-            <a href="https://wa.me/6281319086883?text=Halo+Lestari+Marmer,+saya+ingin+konsultasi+gratis." class="btn-gold">Konsultasi Gratis Sekarang</a>
-        </div>
-    </header>
-
-    <section class="py-5">
+    <section id="home" class="hero" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('1.png') center/cover;">
         <div class="container">
-            <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="usp-card">
-                        <i class="fa-solid fa-warehouse"></i>
-                        <h5>Stok Selalu Ready</h5>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="usp-card">
-                        <i class="fa-solid fa-compass-drafting"></i>
-                        <h5>Pengerjaan Presisi</h5>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
-                    <div class="usp-card">
-                        <i class="fa-solid fa-user-tie"></i>
-                        <h5>Tenaga Ahli 10+ Thn</h5>
-                    </div>
+            <div class="hero-content">
+                <span class="badge">Mitra Grosir Terpercaya</span>
+                <h1>Solusi Belanja Grosir untuk Kebutuhan Rumah & Usaha</h1>
+                <p>Stok Lengkap, Harga Bersahabat. Belanja Lebih Hemat, Untung Lebih Banyak bersama Griya Mandiri Grosir.</p>
+                <div class="hero-btns">
+                    <a href="https://wa.me/6281234567890" class="btn btn-primary">Belanja Sekarang</a>
+                    <a href="https://wa.me/6281234567890?text=Halo%20Griya%20Mandiri,%20boleh%20minta%20daftar%20harganya?" class="btn btn-outline">Minta Daftar Harga</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="jasa" class="py-5 bg-light">
+    <section id="produk" class="section">
         <div class="container text-center">
-            <h2 class="section-title">Layanan Profesional Kami</h2>
-            <div class="row g-4 text-start">
-                <div class="col-md-6 col-lg-3" data-aos="zoom-in">
-                    <div class="service-box">
-                        <h5 class="fw-bold text-gold">Pemasangan</h5>
-                        <p class="small">Pasang marmer lantai, dinding, dan tangga dengan presisi tingkat tinggi.</p>
+            <h2 class="section-title">Produk & Kategori</h2>
+            <p class="section-subtitle">Pilihan lengkap untuk segala kebutuhan harian Anda.</p>
+            
+            <div class="grid-cards">
+                <div class="card">
+                    <img src="img/2.png" alt="Sembako" class="card-img">
+                    <div class="card-body">
+                        <h3>Sembako</h3>
+                        <p>Beras, Gula, Minyak dengan Harga Grosir Hemat.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="service-box">
-                        <h5 class="fw-bold">Poles Marmer</h5>
-                        <p class="small">Kembalikan kilau kristal marmer lama Anda menjadi seperti baru kembali.</p>
+                <div class="card">
+                    <img src="img/3.png" alt="Makanan" class="card-img">
+                    <div class="card-body">
+                        <h3>Makanan & Minuman</h3>
+                        <p>Produk kemasan dengan harga kompetitif untuk toko Anda.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="service-box">
-                        <h5 class="fw-bold">Desain Interior</h5>
-                        <p class="small">Konsultasi desain pola urat (bookmatch) untuk estetika maksimal.</p>
+                <div class="card">
+                    <img src="img/4.png" alt="RT" class="card-img">
+                    <div class="card-body">
+                        <h3>Kebutuhan Rumah Tangga</h3>
+                        <p>Lengkap mulai dari harga distributor.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="service-box">
-                        <h5 class="fw-bold">Custom Furniture</h5>
-                        <p class="small">Pembuatan Top Table, Meja Makan, dan Wastafel marmer custom.</p>
+                <div class="card">
+                    <img src="img/5.png" alt="Snack" class="card-img">
+                    <div class="card-body">
+                        <h3>Snack & Jajanan</h3>
+                        <p>Varian lengkap, sangat cocok untuk reseller.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img/6.png" alt="Kebersihan" class="card-img">
+                    <div class="card-body">
+                        <h3>Produk Kebersihan</h3>
+                        <p>Sabun, detergen, dan alat pembersih harga grosir.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img/7.png" alt="Warung" class="card-img">
+                    <div class="card-body">
+                        <h3>Perlengkapan Usaha</h3>
+                        <p>Stok khusus untuk kebutuhan warung dan UMKM.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="produk" class="py-5">
-        <div class="container text-center">
-            <h2 class="section-title">Koleksi Material Eksklusif</h2>
-            <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-up">
-                    <div class="gallery-item shadow-sm">
-                        <img src="marmer-1.jpg" alt="Marmer Statuario">
-                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus fa-2x"></i></div>
-                    </div>
-                    <h5 class="img-caption">Marmer Premium Statuario</h5>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="gallery-item shadow-sm">
-                        <img src="granit-1.jpg" alt="Granit Black Gold">
-                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus fa-2x"></i></div>
-                    </div>
-                    <h5 class="img-caption">Granit Alam Black Gold</h5>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="gallery-item shadow-sm">
-                        <img src="quadra-1.jpg" alt="Quadra Big Slab">
-                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus fa-2x"></i></div>
-                    </div>
-                    <h5 class="img-caption">Quadra Extra Large Slabs</h5>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="galeri" class="py-5 bg-dark text-white">
-        <div class="container text-center">
-            <h2 class="section-title text-white">Portofolio Proyek</h2>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="ratio ratio-9x16 rounded shadow overflow-hidden">
-                    <iframe
-                        src="https://www.youtube.com/embed/DUYozdKxH3I?si=NW46Ic-Mu9ExD5z3"
-                        title="Proyek Ruang Tamu Luxury"
-                        allowfullscreen
-                    ></iframe>
-                    </div>
-                    <h6 class="portfolio-caption text-light mt-2">
-                    Proyek Ruang Tamu Luxury Residence
-                    </h6>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="ratio ratio-9x16 rounded shadow overflow-hidden">
-                    <iframe
-                        src="https://www.youtube.com/embed/tbKhT0G9I20?si=7tlhmShtRUvPHaXO"
-                        title="Instalasi Marmer Kamar Mandi Hotel"
-                        allowfullscreen
-                    ></iframe>
-                    </div>
-                    <h6 class="portfolio-caption text-light mt-2">
-                    Instalasi Marmer Kamar Mandi Hotel
-                    </h6>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="ratio ratio-9x16 rounded shadow overflow-hidden">
-                    <iframe
-                        src="https://www.youtube.com/embed/Y7kXyWqg078?si=mw3KRsaGmwjF_W52"
-                        title="Pengerjaan Lantai Masjid Agung"
-                        allowfullscreen
-                    ></iframe>
-                    </div>
-                    <h6 class="portfolio-caption text-light mt-2">
-                    Pengerjaan Lantai Masjid Agung
-                    </h6>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="lokasi" class="py-5">
+    <section id="tentang" class="section bg-light">
         <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-7">
-                    <h3 class="fw-bold mb-4">Kunjungi Showroom Kami</h3>
-                    <div class="ratio ratio-16x9 shadow rounded">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126917.39126487042!2d106.8271528!3d-6.229728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTMnNDcuMCJTIDEwNsKwNDknMzcuNyJF!5e0!3m2!1sid!2sid!4v1620000000000" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <div class="flex-row">
+                <div class="flex-col">
+                    <img src="1.png" alt="Toko Kami" class="img-rounded">
+                </div>
+                <div class="flex-col">
+                    <h2 class="section-title text-left">Griya Mandiri Grosir</h2>
+                    <p>Didirikan dengan tujuan membantu masyarakat mendapatkan kebutuhan sehari-hari dengan harga lebih terjangkau tanpa mengorbankan kualitas.</p>
+                    <p>Sejak awal berdiri, kami berkomitmen menyediakan stok barang yang lengkap mulai dari sembako, kebutuhan rumah tangga, hingga produk usaha.</p>
+                    <p>Dengan sistem distribusi yang efisien dan tim yang berpengalaman, kami memastikan setiap pelanggan mendapatkan pelayanan cepat, harga transparan, dan ketersediaan barang yang stabil.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="promo" class="section">
+        <div class="container">
+            <div class="promo-box">
+                <div class="promo-content">
+                    <h2>Promo Spesial Bulan Ini!</h2>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Diskon Khusus Pembelian Grosir Jumlah Besar</li>
+                        <li><i class="fas fa-check-circle"></i> Bonus Produk untuk Pelanggan Setia</li>
+                        <li><i class="fas fa-check-circle"></i> Harga Spesial untuk Reseller & Mitra Usaha</li>
+                    </ul>
+                    <a href="https://wa.me/6281234567890" class="btn btn-primary">Ambil Promo via WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="features-grid mt-5">
+                <div class="feature-item">
+                    <i class="fas fa-tags"></i>
+                    <h4>Harga Lebih Murah</h4>
+                    <p>Untuk pembelian dalam jumlah banyak.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-boxes-stacked"></i>
+                    <h4>Stok Lengkap</h4>
+                    <p>Barang selalu tersedia setiap saat.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-truck-fast"></i>
+                    <h4>Pelayanan Cepat</h4>
+                    <p>Proses transaksi yang ramah & efisien.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-dark text-white">
+        <div class="container text-center">
+            <h2 class="section-title text-white">Apa Kata Mereka?</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>"Harga di Griya Mandiri paling kompetitif di kota ini. Stok sembako warung saya selalu aman."</p>
+                    <h5>- Ibu Sumiati (Pemilik Warung)</h5>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Pelayanannya cepat sekali. Pesan pagi, siang sudah bisa diambil. Sangat membantu bisnis reseller saya."</p>
+                    <h5>- Budi Santoso (Reseller UMKM)</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontak" class="section">
+        <div class="container">
+            <div class="flex-row">
+                <div class="flex-col">
+                    <h3>Lokasi & Jam Operasional</h3>
+                    <p><i class="fas fa-location-dot"></i> Jl. Raya Grosir No. 123, Pusat Kota</p>
+                    <div class="hours">
+                        <p><strong>Senin — Sabtu:</strong> 08:00 – 20:00</p>
+                        <p><strong>Minggu:</strong> 09:00 – 17:00</p>
+                    </div>
+                    <div class="contact-links">
+                        <a href="tel:081234567890" class="btn-text"><i class="fas fa-phone"></i> 0812-3456-7890</a>
                     </div>
                 </div>
-                <div class="col-lg-5">
-                    <div class="p-4 border rounded shadow-sm">
-                        <h5 class="fw-bold mb-3"><i class="fa-solid fa-clock text-gold"></i> Jam Operasional</h5>
-                        <ul class="list-unstyled">
-                            <li class="d-flex justify-content-between mb-2"><span>Senin - Sabtu:</span> <strong>08.00 - 17.00</strong></li>
-                            <li class="d-flex justify-content-between"><span>Minggu:</span> <strong>Chat WhatsApp Dulu</strong></li>
-                        </ul>
-                        <hr>
-                        <h5 class="fw-bold mb-3"><i class="fa-solid fa-location-dot text-gold"></i> Alamat</h5>
-                        <p class="text-muted">Jl. Marmer Raya No. 123, Kawasan Industri Marmer, Kota Anda.</p>
-                        <a href="https://wa.me/6281319086883" class="btn btn-gold w-100">Hubungi Admin Via WhatsApp</a>
+                <div class="flex-col">
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.000000000000!2d110.0000000!3d-7.0000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMDAnMDAuMCJTIDExMMKwMDAnMDAuMCJF!5e0!3m2!1sid!2sid!4v1620000000000!5m2!1sid!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-5 border-top text-center">
-        <div class="container">
-            <h4 class="fw-bold mb-4">LESTARI MARMER GRANIT</h4>
-            <div class="mb-4">
-                <a href="#" class="text-dark mx-2 fs-4"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" class="text-dark mx-2 fs-4"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#" class="text-dark mx-2 fs-4"><i class="fa-brands fa-linkedin"></i></a>
+    <footer>
+        <div class="container text-center">
+            <div class="footer-logo">GRIYA MANDIRI GROSIR</div>
+            <p>&copy; 2026 Griya Mandiri Grosir. All Rights Reserved.</p>
+            <div class="socials">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
             </div>
-            <p class="text-muted small">© 2026 Lestari Marmer Granit. Premium Stone Solutions.</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/6281319086883?text=Halo+Lestari+Marmer,+saya+ingin+tanya+estimasi+harga." class="float-wa">
-        <i class="fa-brands fa-whatsapp"></i>
+    <a href="https://wa.me/6281234567890" class="floating-wa" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span>Chat via WhatsApp</span>
     </a>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1000, once: true });
-    </script>
 </body>
 </html>
