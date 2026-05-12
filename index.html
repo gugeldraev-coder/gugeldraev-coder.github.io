@@ -1,689 +1,208 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dimsum Frozen Premium | Tinggal Kukus & Siap Dinikmati</title>
-  <meta name="description" content="Dimsum frozen premium yang lezat, praktis, halal, dan cocok untuk camilan, stok di rumah, maupun jualan kembali. Pesan cepat via WhatsApp." />
-  <meta name="keywords" content="dimsum frozen, dimsum premium, frozen food halal, dimsum reseller, siomay frozen, hakau frozen" />
-  <meta name="author" content="Perplexity" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Dimsum Frozen Premium, Tinggal Kukus & Siap Dinikmati" />
-  <meta property="og:description" content="Lezat, praktis, halal, dan cocok untuk camilan maupun jualan kembali." />
-  <meta property="og:image" content="https://picsum.photos/seed/dimsum-hero-og/1200/630" />
-  <meta property="og:locale" content="id_ID" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="theme-color" content="#ef4444" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=clash-display@500,600,700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: ['class', '[data-theme="dark"]'],
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              50: '#fff7ed',
-              100: '#ffedd5',
-              200: '#fed7aa',
-              300: '#fdba74',
-              400: '#fb923c',
-              500: '#f97316',
-              600: '#ea580c',
-              700: '#c2410c',
-              800: '#9a3412',
-              900: '#7c2d12'
-            },
-            accent: {
-              500: '#ef4444',
-              600: '#dc2626',
-              700: '#b91c1c'
-            },
-            ink: '#1f1b16'
-          },
-          fontFamily: {
-            sans: ['Satoshi', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-            display: ['Clash Display', 'Satoshi', 'ui-sans-serif', 'system-ui', 'sans-serif']
-          },
-          boxShadow: {
-            soft: '0 10px 30px rgba(239, 68, 68, 0.10)',
-            card: '0 14px 40px rgba(15, 23, 42, 0.08)',
-            glow: '0 18px 55px rgba(249, 115, 22, 0.18)'
-          },
-          keyframes: {
-            floaty: {
-              '0%,100%': { transform: 'translateY(0px)' },
-              '50%': { transform: 'translateY(-10px)' }
-            },
-            fadeUp: {
-              '0%': { opacity: '0', transform: 'translateY(24px)' },
-              '100%': { opacity: '1', transform: 'translateY(0)' }
-            },
-            pulseRing: {
-              '0%': { boxShadow: '0 0 0 0 rgba(239,68,68,.45)' },
-              '70%': { boxShadow: '0 0 0 14px rgba(239,68,68,0)' },
-              '100%': { boxShadow: '0 0 0 0 rgba(239,68,68,0)' }
-            }
-          },
-          animation: {
-            floaty: 'floaty 5s ease-in-out infinite',
-            fadeUp: 'fadeUp .8s cubic-bezier(.16,1,.3,1) both',
-            pulseRing: 'pulseRing 2.2s infinite'
-          }
-        }
-      }
-    }
-  </script>
-  <style>
-    :root {
-      --bg: #fffaf7;
-      --surface: rgba(255,255,255,.82);
-      --text: #1f1b16;
-      --muted: #6b5f57;
-      --line: rgba(31,27,22,.08);
-      --hero: radial-gradient(circle at top left, rgba(239,68,68,.14), transparent 30%), radial-gradient(circle at 80% 10%, rgba(249,115,22,.16), transparent 25%), linear-gradient(180deg, #fff7ed 0%, #fffaf7 55%, #ffffff 100%);
-    }
-    [data-theme="dark"] {
-      --bg: #18120f;
-      --surface: rgba(38,24,19,.88);
-      --text: #fff6ef;
-      --muted: #d5c5bb;
-      --line: rgba(255,255,255,.10);
-      --hero: radial-gradient(circle at top left, rgba(239,68,68,.16), transparent 30%), radial-gradient(circle at 80% 10%, rgba(249,115,22,.12), transparent 25%), linear-gradient(180deg, #231814 0%, #18120f 60%, #120d0b 100%);
-    }
-    html { scroll-padding-top: 88px; }
-    body {
-      font-family: 'Satoshi', ui-sans-serif, system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      overflow-x: hidden;
-    }
-    .glass { background: var(--surface); backdrop-filter: blur(14px); }
-    .section-fade { opacity: 0; transform: translateY(24px); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
-    .section-fade.in-view { opacity: 1; transform: translateY(0); }
-    .hero-bg { background: var(--hero); }
-    .grid-auto { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-    .grid-products { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-    .text-gradient {
-      background: linear-gradient(135deg, #dc2626, #f97316 70%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .floating-shadow { box-shadow: 0 14px 50px rgba(220, 38, 38, .12); }
-    .card-hover { transition: transform .28s cubic-bezier(.16,1,.3,1), box-shadow .28s cubic-bezier(.16,1,.3,1), border-color .28s; }
-    .card-hover:hover { transform: translateY(-8px); box-shadow: 0 18px 50px rgba(15,23,42,.10); }
-    .btn-lift { transition: transform .24s cubic-bezier(.16,1,.3,1), box-shadow .24s cubic-bezier(.16,1,.3,1), background-color .24s; }
-    .btn-lift:hover { transform: translateY(-2px); }
-    .noise::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(rgba(255,255,255,.18) 1px, transparent 1px);
-      background-size: 16px 16px;
-      opacity: .08;
-      pointer-events: none;
-    }
-    .testimonial-track { transition: transform .5s cubic-bezier(.16,1,.3,1); }
-    .faq-content { max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s ease; }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .section-fade, .testimonial-track, .card-hover, .btn-lift { transition: none !important; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Griya Mandiri Grosir | Belanja Lebih Hemat, Untung Lebih Banyak!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <script src="script.js"></script>
 </head>
-<body class="selection:bg-red-200/60 selection:text-ink">
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:text-slate-900">Lewati ke konten</a>
+<body>
 
-  <header class="sticky top-0 z-50 border-b border-black/5 bg-white/80 backdrop-blur-xl dark:border-white/10 dark:bg-[#18120f]/85">
-    <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8" aria-label="Navigasi utama">
-      <a href="#hero" class="flex items-center gap-3" aria-label="Brand Dimsumku Premium">
-        <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-accent-500 to-brand-500 text-white shadow-soft">
-          <svg viewBox="0 0 48 48" class="h-6 w-6" fill="none" aria-hidden="true">
-            <path d="M11 27c0-8 6.2-14 13-14s13 6 13 14c0 5.5-4.5 10-10 10H21c-5.5 0-10-4.5-10-10Z" stroke="currentColor" stroke-width="2.8"/>
-            <path d="M16 23c2-3 4.8-4.5 8-4.5 3.1 0 6 1.5 8 4.5" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/>
-            <path d="M18 28h12" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/>
-          </svg>
-        </span>
-        <div>
-          <p class="font-display text-lg font-semibold tracking-tight">Dimsumku Premium</p>
-          <p class="text-xs text-slate-500 dark:text-slate-400">Frozen food halal & praktis</p>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <span class="logo-accent">GRIYA</span> MANDIRI
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="nav-list">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#produk">Produk</a></li>
+                <li><a href="#tentang">Tentang Kami</a></li>
+                <li><a href="#promo">Promo</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="https://wa.me/6281234567890" class="btn btn-primary-sm">Chat Admin</a>
+            </div>
         </div>
-      </a>
-
-      <div class="hidden items-center gap-7 md:flex">
-        <a href="#keunggulan" class="text-sm font-medium text-slate-700 transition hover:text-accent-600 dark:text-slate-200">Keunggulan</a>
-        <a href="#produk" class="text-sm font-medium text-slate-700 transition hover:text-accent-600 dark:text-slate-200">Produk</a>
-        <a href="#cara-order" class="text-sm font-medium text-slate-700 transition hover:text-accent-600 dark:text-slate-200">Cara Order</a>
-        <a href="#testimoni" class="text-sm font-medium text-slate-700 transition hover:text-accent-600 dark:text-slate-200">Testimoni</a>
-        <a href="#faq" class="text-sm font-medium text-slate-700 transition hover:text-accent-600 dark:text-slate-200">FAQ</a>
-      </div>
-
-      <div class="flex items-center gap-2 sm:gap-3">
-        <button data-theme-toggle class="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white text-slate-700 transition hover:-translate-y-0.5 hover:border-accent-200 hover:text-accent-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-100" aria-label="Ganti tema">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-        </button>
-        <a id="navWaBtn" href="#" class="btn-lift hidden rounded-full bg-accent-500 px-5 py-3 text-sm font-bold text-white shadow-soft hover:bg-accent-600 sm:inline-flex">Pesan Sekarang</a>
-        <button id="menuBtn" class="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white md:hidden dark:border-white/10 dark:bg-white/5" aria-label="Buka menu" aria-expanded="false" aria-controls="mobileMenu">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </button>
-      </div>
     </nav>
 
-    <div id="mobileMenu" class="hidden border-t border-black/5 bg-white/95 px-4 py-4 backdrop-blur-xl dark:border-white/10 dark:bg-[#18120f]/95 md:hidden">
-      <div class="flex flex-col gap-3">
-        <a href="#keunggulan" class="rounded-2xl px-3 py-3 text-sm font-medium hover:bg-orange-50 dark:hover:bg-white/5">Keunggulan</a>
-        <a href="#produk" class="rounded-2xl px-3 py-3 text-sm font-medium hover:bg-orange-50 dark:hover:bg-white/5">Produk</a>
-        <a href="#cara-order" class="rounded-2xl px-3 py-3 text-sm font-medium hover:bg-orange-50 dark:hover:bg-white/5">Cara Order</a>
-        <a href="#testimoni" class="rounded-2xl px-3 py-3 text-sm font-medium hover:bg-orange-50 dark:hover:bg-white/5">Testimoni</a>
-        <a href="#faq" class="rounded-2xl px-3 py-3 text-sm font-medium hover:bg-orange-50 dark:hover:bg-white/5">FAQ</a>
-        <a id="mobileWaBtn" href="#" class="rounded-2xl bg-accent-500 px-4 py-3 text-center text-sm font-bold text-white">Pesan via WhatsApp</a>
-      </div>
-    </div>
-  </header>
-
-  <main id="main-content">
-    <section id="hero" class="hero-bg relative isolate overflow-hidden">
-      <div class="noise absolute inset-0"></div>
-      <div class="mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 sm:px-6 md:py-20 lg:grid-cols-[1.08fr_.92fr] lg:px-8 lg:py-24">
-        <div class="relative z-10 section-fade in-view">
-          <span class="inline-flex items-center gap-2 rounded-full border border-red-200 bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-accent-600 shadow-soft dark:border-red-400/20 dark:bg-white/5 dark:text-orange-200">Frozen food premium untuk keluarga & reseller</span>
-          <h1 class="mt-5 max-w-3xl font-display text-4xl font-semibold leading-[1.02] tracking-tight text-ink sm:text-5xl lg:text-6xl dark:text-white">
-            Dimsum Frozen Premium, <span class="text-gradient">Tinggal Kukus</span> & Siap Dinikmati
-          </h1>
-          <p class="mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
-            Lezat, praktis, halal, dan cocok untuk camilan maupun jualan kembali. Stok sekali, nikmati kapan saja—tanpa ribet, tanpa rasa biasa.
-          </p>
-
-          <div class="mt-7 flex flex-col gap-3 sm:flex-row">
-            <a id="heroWaBtn" href="#" class="btn-lift inline-flex min-h-[52px] items-center justify-center rounded-full bg-accent-500 px-6 py-3 text-sm font-bold text-white shadow-soft hover:bg-accent-600">Pesan Sekarang</a>
-            <a href="#produk" class="btn-lift inline-flex min-h-[52px] items-center justify-center rounded-full border border-slate-300 bg-white/80 px-6 py-3 text-sm font-bold text-slate-800 hover:border-orange-300 hover:text-accent-600 dark:border-white/15 dark:bg-white/5 dark:text-white">Lihat Menu</a>
-          </div>
-
-          <div class="mt-8 flex flex-wrap gap-3">
-            <span class="rounded-full bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-soft dark:bg-white/5 dark:text-slate-100">Halal</span>
-            <span class="rounded-full bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-soft dark:bg-white/5 dark:text-slate-100">Tanpa Pengawet</span>
-            <span class="rounded-full bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-soft dark:bg-white/5 dark:text-slate-100">Homemade</span>
-            <span class="rounded-full bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-soft dark:bg-white/5 dark:text-slate-100">Fresh Frozen</span>
-          </div>
-
-          <div class="mt-8 grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-4">
-            <div class="rounded-2xl border border-black/5 bg-white/75 p-4 shadow-soft dark:border-white/10 dark:bg-white/5">
-              <p class="text-2xl font-black text-accent-600">1.2K+</p>
-              <p class="text-sm text-slate-600 dark:text-slate-300">Order puas</p>
-            </div>
-            <div class="rounded-2xl border border-black/5 bg-white/75 p-4 shadow-soft dark:border-white/10 dark:bg-white/5">
-              <p class="text-2xl font-black text-accent-600">6</p>
-              <p class="text-sm text-slate-600 dark:text-slate-300">Varian favorit</p>
-            </div>
-            <div class="rounded-2xl border border-black/5 bg-white/75 p-4 shadow-soft dark:border-white/10 dark:bg-white/5">
-              <p class="text-2xl font-black text-accent-600">4.9/5</p>
-              <p class="text-sm text-slate-600 dark:text-slate-300">Rating pelanggan</p>
-            </div>
-            <div class="rounded-2xl border border-black/5 bg-white/75 p-4 shadow-soft dark:border-white/10 dark:bg-white/5">
-              <p class="text-2xl font-black text-accent-600">Fast</p>
-              <p class="text-sm text-slate-600 dark:text-slate-300">Respon WhatsApp</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="relative section-fade lg:justify-self-end">
-          <div class="absolute -left-4 top-10 hidden h-24 w-24 rounded-full bg-red-200/60 blur-2xl lg:block"></div>
-          <div class="absolute -right-4 bottom-8 hidden h-28 w-28 rounded-full bg-orange-300/50 blur-2xl lg:block"></div>
-          <div class="relative mx-auto max-w-xl animate-floaty rounded-[2rem] border border-white/60 bg-white/60 p-3 shadow-glow backdrop-blur-xl dark:border-white/10 dark:bg-white/5">
-            <img src="1-hero.png" alt="Dimsum frozen premium disajikan hangat di atas piring" width="900" height="760" loading="eager" decoding="async" class="h-full min-h-[360px] w-full rounded-[1.6rem] object-cover" />
-            <div class="absolute inset-x-5 bottom-5 rounded-3xl bg-white/90 p-4 shadow-card backdrop-blur dark:bg-[#241914]/90">
-              <div class="flex items-start justify-between gap-4">
-                <div>
-                  <p class="text-xs font-bold uppercase tracking-[0.16em] text-accent-600">Best seller minggu ini</p>
-                  <p class="mt-1 text-lg font-bold">Dimsum Ayam Premium</p>
-                  <p class="text-sm text-slate-600 dark:text-slate-300">Tekstur juicy, isi padat, cocok untuk stok rumah atau dijual lagi.</p>
+    <section id="home" class="hero" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('1.png') center/cover;">
+        <div class="container">
+            <div class="hero-content">
+                <span class="badge">Mitra Grosir Terpercaya</span>
+                <h1>Solusi Belanja Grosir untuk Kebutuhan Rumah & Usaha</h1>
+                <p>Stok Lengkap, Harga Bersahabat. Belanja Lebih Hemat, Untung Lebih Banyak bersama Griya Mandiri Grosir.</p>
+                <div class="hero-btns">
+                    <a href="https://wa.me/6281234567890" class="btn btn-primary">Belanja Sekarang</a>
+                    <a href="https://wa.me/6281234567890?text=Halo%20Griya%20Mandiri,%20boleh%20minta%20daftar%20harganya?" class="btn btn-outline">Minta Daftar Harga</a>
                 </div>
-                <span class="rounded-full bg-orange-100 px-3 py-1 text-xs font-bold text-orange-700 dark:bg-orange-500/15 dark:text-orange-200">Promo</span>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
 
-    <section id="keunggulan" class="section-fade mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-      <div class="max-w-2xl">
-        <span class="inline-flex rounded-full bg-orange-100 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-orange-700 dark:bg-orange-400/10 dark:text-orange-200">Kenapa banyak yang repeat order?</span>
-        <h2 class="mt-4 font-display text-3xl font-semibold tracking-tight sm:text-4xl">Bukan sekadar frozen food, tapi stok praktis yang tetap terasa spesial.</h2>
-        <p class="mt-4 text-slate-600 dark:text-slate-300">Copywriting, visual, dan struktur dibuat untuk menegaskan rasa premium, kemudahan order, serta potensi cuan bagi reseller dan UMKM.</p>
-      </div>
-      <div id="advantagesGrid" class="mt-10 grid grid-auto gap-5"></div>
-    </section>
-
-    <section id="produk" class="section-fade bg-white/70 py-16 dark:bg-white/[0.03] lg:py-24">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
-          <div class="max-w-2xl">
-            <span class="inline-flex rounded-full bg-red-100 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-red-700 dark:bg-red-400/10 dark:text-red-200">Menu favorit</span>
-            <h2 class="mt-4 font-display text-3xl font-semibold tracking-tight sm:text-4xl">Varian yang bikin pelanggan mudah checkout.</h2>
-            <p class="mt-4 text-slate-600 dark:text-slate-300">Setiap produk punya deskripsi singkat yang menonjolkan manfaat, rasa, dan momen konsumsi—lebih mudah memicu pembelian impulsif maupun order grosir.</p>
-          </div>
-          <a href="#promo" class="inline-flex min-h-[48px] items-center justify-center rounded-full border border-slate-300 px-5 py-3 text-sm font-bold text-slate-700 transition hover:border-orange-300 hover:text-accent-600 dark:border-white/10 dark:text-slate-100">Lihat promo aktif</a>
-        </div>
-        <div id="productsGrid" class="mt-10 grid grid-products gap-6"></div>
-      </div>
-    </section>
-
-    <section id="cara-order" class="section-fade mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-      <div class="max-w-2xl">
-        <span class="inline-flex rounded-full bg-orange-100 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-orange-700 dark:bg-orange-400/10 dark:text-orange-200">Cara order</span>
-        <h2 class="mt-4 font-display text-3xl font-semibold tracking-tight sm:text-4xl">Order cepat tanpa ribet, cocok untuk pelanggan sibuk.</h2>
-      </div>
-      <div id="orderSteps" class="mt-10 grid gap-5 lg:grid-cols-4"></div>
-    </section>
-
-    <section id="testimoni" class="section-fade overflow-hidden bg-gradient-to-br from-red-50 via-orange-50 to-white py-16 dark:from-[#241410] dark:via-[#18120f] dark:to-[#120d0b] lg:py-24">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="max-w-2xl">
-          <span class="inline-flex rounded-full bg-white px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-accent-600 shadow-soft dark:bg-white/5 dark:text-orange-200">Testimoni pelanggan</span>
-          <h2 class="mt-4 font-display text-3xl font-semibold tracking-tight sm:text-4xl">Ulasan yang memperkuat kepercayaan sebelum orang chat.</h2>
-          <p class="mt-4 text-slate-600 dark:text-slate-300">Slider ini dirancang ringan tanpa library tambahan agar tetap cepat di-hosting di Netlify.</p>
-        </div>
-        <div class="relative mt-10 overflow-hidden rounded-[2rem] border border-black/5 bg-white/80 p-4 shadow-card dark:border-white/10 dark:bg-white/5 sm:p-6">
-          <div id="testimonialTrack" class="testimonial-track flex"></div>
-          <div class="mt-6 flex items-center justify-between gap-4">
-            <div id="testimonialDots" class="flex items-center gap-2"></div>
-            <div class="flex items-center gap-3">
-              <button id="prevTestimonial" class="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white text-slate-800 hover:border-orange-300 hover:text-accent-600 dark:border-white/10 dark:bg-white/5 dark:text-white" aria-label="Testimoni sebelumnya">&#8592;</button>
-              <button id="nextTestimonial" class="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white text-slate-800 hover:border-orange-300 hover:text-accent-600 dark:border-white/10 dark:bg-white/5 dark:text-white" aria-label="Testimoni berikutnya">&#8594;</button>
+    <section id="produk" class="section">
+        <div class="container text-center">
+            <h2 class="section-title">Produk & Kategori</h2>
+            <p class="section-subtitle">Pilihan lengkap untuk segala kebutuhan harian Anda.</p>
+            
+            <div class="grid-cards">
+                <div class="card">
+                    <img src="2.png" alt="Sembako" class="card-img">
+                    <div class="card-body">
+                        <h3>Sembako</h3>
+                        <p>Beras, Gula, Minyak dengan Harga Grosir Hemat.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="3.png" alt="Makanan" class="card-img">
+                    <div class="card-body">
+                        <h3>Makanan & Minuman</h3>
+                        <p>Produk kemasan dengan harga kompetitif untuk toko Anda.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="4.png" alt="RT" class="card-img">
+                    <div class="card-body">
+                        <h3>Kebutuhan Rumah Tangga</h3>
+                        <p>Lengkap mulai dari harga distributor.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="5.png" alt="Snack" class="card-img">
+                    <div class="card-body">
+                        <h3>Snack & Jajanan</h3>
+                        <p>Varian lengkap, sangat cocok untuk reseller.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="6.png" alt="Kebersihan" class="card-img">
+                    <div class="card-body">
+                        <h3>Produk Kebersihan</h3>
+                        <p>Sabun, detergen, dan alat pembersih harga grosir.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="7.png" alt="Warung" class="card-img">
+                    <div class="card-body">
+                        <h3>Perlengkapan Usaha</h3>
+                        <p>Stok khusus untuk kebutuhan warung dan UMKM.</p>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
 
-    <section id="promo" class="section-fade mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-      <div class="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-accent-600 via-red-500 to-brand-500 p-8 text-white shadow-glow sm:p-10 lg:p-14">
-        <div class="noise absolute inset-0 opacity-40"></div>
-        <div class="relative z-10 grid gap-8 lg:grid-cols-[1.1fr_.9fr] lg:items-center">
-          <div>
-            <span class="inline-flex rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em]">Promo panas bulan ini</span>
-            <h2 class="mt-4 max-w-2xl font-display text-3xl font-semibold tracking-tight sm:text-4xl">Paket promo yang mendorong order lebih besar dalam satu chat.</h2>
-            <p class="mt-4 max-w-2xl text-white/85">Naikkan AOV dengan penawaran yang jelas: reseller lebih untung, keluarga lebih hemat, pelanggan baru lebih cepat ambil keputusan.</p>
-          </div>
-          <div class="grid gap-4 sm:grid-cols-2" id="promoGrid"></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="faq" class="section-fade bg-white/70 py-16 dark:bg-white/[0.03] lg:py-24">
-      <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[.85fr_1.15fr] lg:px-8">
-        <div>
-          <span class="inline-flex rounded-full bg-orange-100 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-orange-700 dark:bg-orange-400/10 dark:text-orange-200">FAQ</span>
-          <h2 class="mt-4 font-display text-3xl font-semibold tracking-tight sm:text-4xl">Jawaban cepat yang mengurangi keraguan pelanggan.</h2>
-          <p class="mt-4 text-slate-600 dark:text-slate-300">Accordion dibuat interaktif, ringan, dan mudah dikembangkan jika nanti ingin dihubungkan ke CMS atau Google Sheets API.</p>
-        </div>
-        <div id="faqList" class="space-y-4"></div>
-      </div>
-    </section>
-
-    <section class="section-fade mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-      <div class="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center rounded-[2rem] border border-black/5 bg-gradient-to-r from-orange-50 via-white to-red-50 p-8 shadow-card dark:border-white/10 dark:from-[#241814] dark:via-[#18120f] dark:to-[#261411] sm:p-10">
-        <div>
-          <span class="inline-flex rounded-full bg-white px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-accent-600 shadow-soft dark:bg-white/5 dark:text-orange-200">Saatnya checkout</span>
-          <h2 class="mt-4 font-display text-3xl font-semibold tracking-tight sm:text-4xl">Yuk Stok Dimsum Frozen Favoritmu Sekarang!</h2>
-          <p class="mt-4 max-w-2xl text-slate-600 dark:text-slate-300">Cocok untuk stok rumah, ide jualan, bekal anak, atau menu cepat saat lapar datang. Chat sekarang sebelum promo hari ini berakhir.</p>
-        </div>
-        <a id="closingWaBtn" href="#" class="btn-lift animate-pulseRing inline-flex min-h-[58px] items-center justify-center rounded-full bg-accent-500 px-8 py-4 text-base font-black text-white shadow-soft hover:bg-accent-600">Pesan via WhatsApp</a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="border-t border-black/5 bg-[#fff5ef] py-12 dark:border-white/10 dark:bg-[#120d0b]">
-    <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.15fr_.85fr_.85fr] lg:px-8">
-      <div>
-        <div class="flex items-center gap-3">
-          <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-accent-500 to-brand-500 text-white shadow-soft">
-            <svg viewBox="0 0 48 48" class="h-6 w-6" fill="none" aria-hidden="true">
-              <path d="M11 27c0-8 6.2-14 13-14s13 6 13 14c0 5.5-4.5 10-10 10H21c-5.5 0-10-4.5-10-10Z" stroke="currentColor" stroke-width="2.8"/>
-              <path d="M16 23c2-3 4.8-4.5 8-4.5 3.1 0 6 1.5 8 4.5" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/>
-              <path d="M18 28h12" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/>
-            </svg>
-          </span>
-          <div>
-            <p class="font-display text-xl font-semibold tracking-tight">Dimsumku Premium</p>
-            <p class="text-sm text-slate-600 dark:text-slate-300">Lezat, praktis, dan siap jadi repeat order.</p>
-          </div>
-        </div>
-        <p class="mt-5 max-w-md text-sm leading-7 text-slate-600 dark:text-slate-300">Landing page ini dibuat dengan struktur kode yang mudah dikembangkan untuk brand frozen food, reseller, dan UMKM kuliner yang ingin meningkatkan konversi lewat WhatsApp.</p>
-      </div>
-      <div>
-        <h3 class="text-sm font-black uppercase tracking-[0.16em] text-slate-900 dark:text-white">Info usaha</h3>
-        <ul class="mt-4 space-y-3 text-sm text-slate-600 dark:text-slate-300">
-          <li>Alamat: Jl. Contoh Kuliner No. 88, Kota Anda</li>
-          <li>WhatsApp: <a id="footerWaBtn" href="#" class="font-bold text-accent-600">+62 812-3456-7890</a></li>
-          <li>Jam operasional: Senin - Sabtu, 08.00 - 20.00</li>
-          <li>Area pengiriman: Kota & sekitar, ekspedisi frozen sesuai kebutuhan</li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="text-sm font-black uppercase tracking-[0.16em] text-slate-900 dark:text-white">Media sosial</h3>
-        <div class="mt-4 flex flex-wrap gap-3">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="rounded-full border border-black/10 px-4 py-2 text-sm font-medium hover:border-orange-300 hover:text-accent-600 dark:border-white/10">Instagram</a>
-          <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" class="rounded-full border border-black/10 px-4 py-2 text-sm font-medium hover:border-orange-300 hover:text-accent-600 dark:border-white/10">TikTok</a>
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="rounded-full border border-black/10 px-4 py-2 text-sm font-medium hover:border-orange-300 hover:text-accent-600 dark:border-white/10">Facebook</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <a id="floatingWaBtn" href="#" class="fixed bottom-5 right-5 z-50 inline-flex min-h-[58px] items-center gap-3 rounded-full bg-[#25D366] px-5 py-3 text-sm font-black text-white shadow-2xl transition hover:-translate-y-1 hover:bg-[#1fb85a]" aria-label="Chat via WhatsApp">
-    <svg viewBox="0 0 32 32" class="h-5 w-5 fill-current" aria-hidden="true"><path d="M19.11 17.2c-.28-.14-1.65-.81-1.91-.9-.26-.1-.45-.14-.64.14-.19.28-.73.9-.9 1.08-.16.19-.33.21-.61.07-.28-.14-1.17-.43-2.23-1.36-.82-.73-1.38-1.62-1.54-1.89-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.64-1.55-.88-2.12-.23-.55-.47-.47-.64-.48l-.54-.01c-.19 0-.49.07-.75.35s-.98.96-.98 2.33.99 2.69 1.13 2.88c.14.19 1.95 2.97 4.73 4.16.66.28 1.18.45 1.58.58.66.21 1.26.18 1.73.11.53-.08 1.65-.67 1.89-1.32.23-.66.23-1.22.16-1.33-.07-.12-.26-.19-.54-.33Z"></path><path d="M27.12 4.85A15.82 15.82 0 0 0 16.02.01C7.3.01.2 7.12.2 15.85c0 2.78.73 5.49 2.1 7.87L0 32l8.49-2.22a15.8 15.8 0 0 0 7.52 1.92h.01c8.72 0 15.82-7.11 15.82-15.84 0-4.23-1.65-8.2-4.72-11.01ZM16.02 29.03h-.01a13.1 13.1 0 0 1-6.68-1.83l-.48-.28-5.04 1.32 1.35-4.92-.31-.5a13.13 13.13 0 0 1-2.02-6.98c0-7.24 5.9-13.14 13.17-13.14 3.51 0 6.82 1.36 9.3 3.85a13.04 13.04 0 0 1 3.87 9.3c0 7.25-5.9 13.16-13.15 13.16Z"></path></svg>
-    WhatsApp
-  </a>
-
-  <script>
-    const brandConfig = {
-      brandName: 'Dimsumku Premium',
-      whatsappNumber: '6281234567890',
-      city: 'Kota Anda',
-      defaultMessage: 'Halo Dimsumku Premium, saya tertarik pesan dimsum frozen. Mohon info menu, harga, dan promo hari ini ya.'
-    };
-
-    const advantages = [
-      { icon: 'sparkles', title: 'Rasa premium restoran', desc: 'Isi padat, bumbu terasa, dan tekstur tetap nikmat setelah dikukus.' },
-      { icon: 'chef-hat', title: 'Praktis tinggal kukus', desc: 'Solusi cepat untuk sarapan, camilan sore, atau stok darurat saat lapar.' },
-      { icon: 'store', title: 'Cocok untuk reseller', desc: 'Margin menarik, varian mudah dijual, dan copy menu siap pakai.' },
-      { icon: 'wallet', title: 'Harga terjangkau', desc: 'Terasa premium tanpa bikin pelanggan mikir terlalu lama untuk checkout.' },
-      { icon: 'snowflake', title: 'Pengiriman aman frozen', desc: 'Dikemas rapi untuk menjaga kualitas produk sampai tujuan.' },
-      { icon: 'utensils-crossed', title: 'Banyak varian rasa', desc: 'Pilihan lengkap untuk keluarga, anak kos, hingga pelaku usaha kuliner.' }
-    ];
-
-    const products = [
-      { name: 'Dimsum Ayam', desc: 'Lembut, juicy, dan jadi varian paling aman untuk repeat order.', price: 'Rp22.000', badge: 'Best Seller', image: '2-ayam.png', seed: 'ayam' },
-      { name: 'Dimsum Udang', desc: 'Aroma udang terasa, cocok untuk pelanggan yang suka rasa gurih segar.', price: 'Rp27.000', badge: 'Favorit', image: '3-campuran.png', seed: 'udang' },
-      { name: 'Dimsum Mozzarella', desc: 'Lumer, creamy, dan sangat menarik untuk pasar anak muda.', price: 'Rp29.000', badge: 'Promo', image: '4-reseller.png', seed: 'mozzarella' },
-      { name: 'Lumpia Frozen', desc: 'Renyah di luar, gurih di dalam, cocok untuk stok camilan keluarga.', price: 'Rp24.000', badge: 'Hemat', image: '5-fresh.png', seed: 'lumpia' },
-      { name: 'Hakau', desc: 'Kulit lembut dengan sensasi premium yang cocok untuk menu spesial.', price: 'Rp31.000', badge: 'Premium', image: '6-promo.png', seed: 'hakau' },
-      { name: 'Siomay Premium', desc: 'Isi padat dan rasa kaya, pas untuk rumah tangga maupun jual ulang.', price: 'Rp28.000', badge: 'Repeat Order', image: '7-cta.png', seed: 'siomay' }
-    ];
-
-    const steps = [
-      { step: '01', title: 'Pilih menu', desc: 'Lihat varian favorit dan tentukan produk yang paling cocok untuk kebutuhanmu.' },
-      { step: '02', title: 'Chat WhatsApp', desc: 'Klik tombol order, pesan otomatis langsung terisi supaya lebih cepat.' },
-      { step: '03', title: 'Pembayaran', desc: 'Admin konfirmasi total belanja, promo, dan ongkir sebelum proses kirim.' },
-      { step: '04', title: 'Produk dikirim', desc: 'Pesanan dikemas aman agar sampai dalam kondisi frozen dan siap simpan.' }
-    ];
-
-    const testimonials = [
-      { name: 'Nadia', city: 'Brebes', rating: 5, avatar: 'https://i.pravatar.cc/120?img=32', comment: 'Awalnya coba untuk stok rumah, ternyata anak-anak suka banget. Sekarang selalu ready di freezer karena tinggal kukus dan rasanya tetap enak.' },
-      { name: 'Rani', city: 'Tegal', rating: 5, avatar: 'https://i.pravatar.cc/120?img=5', comment: 'Saya reseller kecil-kecilan dan varian dimsum ayam paling cepat habis. Pelanggan bilang rasanya berkelas tapi harganya masih masuk.' },
-      { name: 'Dimas', city: 'Purwokerto', rating: 5, avatar: 'https://i.pravatar.cc/120?img=12', comment: 'Buat anak kos ini penyelamat. Tinggal kukus, sambal tambah dikit, langsung jadi makan malam yang bikin puas.' },
-      { name: 'Bu Siska', city: 'Cirebon', rating: 5, avatar: 'https://i.pravatar.cc/120?img=49', comment: 'Saya beli untuk jualan frozen dan repeat order terus. Admin cepat respon, packing rapi, dan promo reseller-nya membantu banget.' }
-    ];
-
-    const promos = [
-      { title: 'Diskon reseller', desc: 'Harga khusus untuk pembelian partai agar margin lebih sehat.' },
-      { title: 'Gratis ongkir area tertentu', desc: 'Cocok untuk dorong closing lebih cepat di area terdekat.' },
-      { title: 'Buy 5 Get 1', desc: 'Strategi bundling yang efektif untuk naikin jumlah item per transaksi.' },
-      { title: 'Paket hemat keluarga', desc: 'Kombinasi varian favorit untuk stok mingguan di rumah.' }
-    ];
-
-    const faqs = [
-      { q: 'Berapa tahan frozen?', a: 'Dalam freezer bersuhu stabil, produk bisa tahan sekitar 2–3 bulan. Semakin baik penyimpanan, semakin terjaga tekstur dan rasanya.' },
-      { q: 'Cara penyimpanan?', a: 'Simpan dalam freezer setelah diterima. Jika belum habis, pastikan kemasan tertutup rapat agar kualitas tetap terjaga.' },
-      { q: 'Minimal order?', a: 'Minimal order bisa fleksibel tergantung area pengiriman. Untuk reseller, tersedia penawaran pembelian partai.' },
-      { q: 'Apakah halal?', a: 'Ya, bahan yang digunakan dipilih dengan standar halal dan proses produksi dijaga kebersihannya.' },
-      { q: 'Bisa jadi reseller?', a: 'Bisa. Landing page ini sudah menonjolkan value untuk reseller dan UMKM, jadi sangat cocok untuk akuisisi mitra baru.' }
-    ];
-
-    const iconSvgs = {
-      sparkles: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l1.8 4.2L18 9l-4.2 1.8L12 15l-1.8-4.2L6 9l4.2-1.8L12 3Z"></path><path d="M5 17l.9 2.1L8 20l-2.1.9L5 23l-.9-2.1L2 20l2.1-.9L5 17Z"></path><path d="M19 14l1.1 2.6L23 17.7l-2.9 1.1L19 21.4l-1.1-2.6L15 17.7l2.9-1.1L19 14Z"></path></svg>',
-      'chef-hat': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 18h12"></path><path d="M7 18v-5"></path><path d="M17 18v-5"></path><path d="M18 13a4 4 0 0 0 .2-8 5.5 5.5 0 0 0-10.4 1A3.5 3.5 0 0 0 6 13h12Z"></path></svg>',
-      store: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l2-5h14l2 5"></path><path d="M4 9h16v10H4z"></path><path d="M9 19v-6h6v6"></path></svg>',
-      wallet: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M19 7H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2Z"></path><path d="M16 12h.01"></path><path d="M7 7V5a2 2 0 0 1 2-2h8"></path></svg>',
-      snowflake: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20"></path><path d="m4.93 6.93 14.14 14.14"></path><path d="m19.07 6.93-14.14 14.14"></path><path d="M2 12h20"></path></svg>',
-      'utensils-crossed': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m16 2 6 6"></path><path d="m11 7 6 6"></path><path d="m2 22 8-8"></path><path d="m17 17 5 5"></path><path d="M14 4 4 14"></path></svg>'
-    };
-
-    const waLink = (message) => `https://wa.me/${brandConfig.whatsappNumber}?text=${encodeURIComponent(message)}`;
-
-    function setupThemeToggle() {
-      const root = document.documentElement;
-      const toggle = document.querySelector('[data-theme-toggle]');
-      let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      root.setAttribute('data-theme', theme);
-      const renderIcon = () => {
-        toggle.innerHTML = theme === 'dark'
-          ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>'
-          : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
-      };
-      renderIcon();
-      toggle.addEventListener('click', () => {
-        theme = theme === 'dark' ? 'light' : 'dark';
-        root.setAttribute('data-theme', theme);
-        renderIcon();
-      });
-    }
-
-    function renderAdvantages() {
-      const el = document.getElementById('advantagesGrid');
-      el.innerHTML = advantages.map(item => `
-        <article class="card-hover rounded-[1.5rem] border border-black/5 bg-white p-6 shadow-card dark:border-white/10 dark:bg-white/5">
-          <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-red-50 to-orange-100 text-accent-600 dark:from-red-500/10 dark:to-orange-500/10">${iconSvgs[item.icon]}</div>
-          <h3 class="text-xl font-bold tracking-tight">${item.title}</h3>
-          <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">${item.desc}</p>
-        </article>
-      `).join('');
-    }
-
-    function renderProducts() {
-      const grid = document.getElementById('productsGrid');
-      grid.innerHTML = products.map((product, idx) => `
-        <article class="card-hover group overflow-hidden rounded-[1.8rem] border border-black/5 bg-white shadow-card dark:border-white/10 dark:bg-white/5">
-          <div class="relative overflow-hidden">
-            <img src="${product.image}" alt="${product.name}" width="640" height="520" loading="lazy" decoding="async" class="h-60 w-full object-cover transition duration-500 group-hover:scale-105" />
-            <span class="absolute left-4 top-4 rounded-full bg-white/92 px-3 py-1 text-xs font-black uppercase tracking-[0.16em] text-accent-600 shadow-soft dark:bg-[#20140f]/92">${product.badge}</span>
-          </div>
-          <div class="p-6">
-            <div class="flex items-start justify-between gap-3">
-              <div>
-                <h3 class="text-xl font-bold tracking-tight">${product.name}</h3>
-                <p class="mt-2 text-sm leading-7 text-slate-600 dark:text-slate-300">${product.desc}</p>
-              </div>
-              <span class="rounded-full bg-orange-100 px-3 py-1 text-xs font-bold text-orange-700 dark:bg-orange-400/10 dark:text-orange-200">${idx < 2 ? 'Hot' : 'Ready'}</span>
+    <section id="tentang" class="section bg-light">
+        <div class="container">
+            <div class="flex-row">
+                <div class="flex-col">
+                    <img src="1.png" alt="Toko Kami" class="img-rounded">
+                </div>
+                <div class="flex-col">
+                    <h2 class="section-title text-left">Griya Mandiri Grosir</h2>
+                    <p>Didirikan dengan tujuan membantu masyarakat mendapatkan kebutuhan sehari-hari dengan harga lebih terjangkau tanpa mengorbankan kualitas.</p>
+                    <p>Sejak awal berdiri, kami berkomitmen menyediakan stok barang yang lengkap mulai dari sembako, kebutuhan rumah tangga, hingga produk usaha.</p>
+                    <p>Dengan sistem distribusi yang efisien dan tim yang berpengalaman, kami memastikan setiap pelanggan mendapatkan pelayanan cepat, harga transparan, dan ketersediaan barang yang stabil.</p>
+                </div>
             </div>
-            <div class="mt-5 flex items-center justify-between gap-3">
-              <div>
-                <p class="text-xs uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">Mulai dari</p>
-                <p class="text-2xl font-black text-accent-600">${product.price}</p>
-              </div>
-              <a href="${waLink(`Halo ${brandConfig.brandName}, saya ingin pesan ${product.name}. Mohon info stok, harga, dan promo terbaru ya.`)}" target="_blank" rel="noopener noreferrer" class="btn-lift inline-flex min-h-[48px] items-center justify-center rounded-full bg-accent-500 px-5 py-3 text-sm font-bold text-white shadow-soft hover:bg-accent-600">Pesan via WhatsApp</a>
+        </div>
+    </section>
+
+    <section id="promo" class="section">
+        <div class="container">
+            <div class="promo-box">
+                <div class="promo-content">
+                    <h2>Promo Spesial Bulan Ini!</h2>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Diskon Khusus Pembelian Grosir Jumlah Besar</li>
+                        <li><i class="fas fa-check-circle"></i> Bonus Produk untuk Pelanggan Setia</li>
+                        <li><i class="fas fa-check-circle"></i> Harga Spesial untuk Reseller & Mitra Usaha</li>
+                    </ul>
+                    <a href="https://wa.me/6281234567890" class="btn btn-primary">Ambil Promo via WhatsApp</a>
+                </div>
             </div>
-          </div>
-        </article>
-      `).join('');
-    }
 
-    function renderSteps() {
-      const el = document.getElementById('orderSteps');
-      el.innerHTML = steps.map((item, idx) => `
-        <article class="relative rounded-[1.6rem] border border-black/5 bg-white p-6 shadow-card dark:border-white/10 dark:bg-white/5">
-          ${idx < steps.length - 1 ? '<span class="absolute right-[-12px] top-1/2 hidden h-0.5 w-6 bg-orange-200 lg:block"></span>' : ''}
-          <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-accent-500 to-brand-500 text-sm font-black text-white">${item.step}</span>
-          <h3 class="mt-5 text-xl font-bold tracking-tight">${item.title}</h3>
-          <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">${item.desc}</p>
-        </article>
-      `).join('');
-    }
-
-    function renderPromos() {
-      const el = document.getElementById('promoGrid');
-      el.innerHTML = promos.map(item => `
-        <article class="rounded-[1.4rem] border border-white/15 bg-white/10 p-5 backdrop-blur">
-          <h3 class="text-lg font-bold">${item.title}</h3>
-          <p class="mt-2 text-sm leading-7 text-white/80">${item.desc}</p>
-        </article>
-      `).join('');
-    }
-
-    function renderFaqs() {
-      const wrap = document.getElementById('faqList');
-      wrap.innerHTML = faqs.map((faq, index) => `
-        <article class="overflow-hidden rounded-[1.4rem] border border-black/5 bg-white shadow-card dark:border-white/10 dark:bg-white/5">
-          <button class="faq-trigger flex min-h-[60px] w-full items-center justify-between gap-4 px-5 py-4 text-left" aria-expanded="${index === 0 ? 'true' : 'false'}">
-            <span class="text-base font-bold">${faq.q}</span>
-            <span class="text-2xl text-accent-600">+</span>
-          </button>
-          <div class="faq-content px-5 ${index === 0 ? 'pb-5' : ''}" style="max-height:${index === 0 ? '220px' : '0px'}">
-            <p class="text-sm leading-7 text-slate-600 dark:text-slate-300">${faq.a}</p>
-          </div>
-        </article>
-      `).join('');
-
-      wrap.querySelectorAll('.faq-trigger').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const expanded = btn.getAttribute('aria-expanded') === 'true';
-          wrap.querySelectorAll('.faq-trigger').forEach(other => {
-            other.setAttribute('aria-expanded', 'false');
-            other.querySelector('span:last-child').textContent = '+';
-            const panel = other.nextElementSibling;
-            panel.style.maxHeight = '0px';
-            panel.classList.remove('pb-5');
-          });
-          if (!expanded) {
-            btn.setAttribute('aria-expanded', 'true');
-            btn.querySelector('span:last-child').textContent = '–';
-            const panel = btn.nextElementSibling;
-            panel.classList.add('pb-5');
-            panel.style.maxHeight = panel.scrollHeight + 32 + 'px';
-          }
-        });
-      });
-    }
-
-    function renderTestimonials() {
-      const track = document.getElementById('testimonialTrack');
-      const dots = document.getElementById('testimonialDots');
-      let current = 0;
-
-      track.innerHTML = testimonials.map(item => `
-        <article class="min-w-full px-1">
-          <div class="grid gap-6 rounded-[1.6rem] bg-gradient-to-br from-white to-orange-50 p-6 dark:from-white/5 dark:to-orange-500/5 lg:grid-cols-[auto_1fr] lg:p-8">
-            <img src="${item.avatar}" alt="Avatar ${item.name}" width="120" height="120" loading="lazy" decoding="async" class="h-20 w-20 rounded-full object-cover ring-4 ring-white shadow-soft" />
-            <div>
-              <div class="flex flex-wrap items-center gap-3">
-                <h3 class="text-xl font-bold">${item.name}</h3>
-                <span class="rounded-full bg-orange-100 px-3 py-1 text-xs font-bold text-orange-700 dark:bg-orange-400/10 dark:text-orange-200">${item.city}</span>
-              </div>
-              <div class="mt-3 flex gap-1 text-orange-400">${'★'.repeat(item.rating)}</div>
-              <p class="mt-4 max-w-3xl text-base leading-8 text-slate-700 dark:text-slate-200">“${item.comment}”</p>
+            <div class="features-grid mt-5">
+                <div class="feature-item">
+                    <i class="fas fa-tags"></i>
+                    <h4>Harga Lebih Murah</h4>
+                    <p>Untuk pembelian dalam jumlah banyak.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-boxes-stacked"></i>
+                    <h4>Stok Lengkap</h4>
+                    <p>Barang selalu tersedia setiap saat.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-truck-fast"></i>
+                    <h4>Pelayanan Cepat</h4>
+                    <p>Proses transaksi yang ramah & efisien.</p>
+                </div>
             </div>
-          </div>
-        </article>
-      `).join('');
+        </div>
+    </section>
 
-      dots.innerHTML = testimonials.map((_, idx) => `<button class="dot h-2.5 w-2.5 rounded-full ${idx === 0 ? 'bg-accent-500 w-8' : 'bg-slate-300 dark:bg-white/20'} transition-all" aria-label="Ke testimoni ${idx + 1}"></button>`).join('');
-      const dotEls = [...dots.querySelectorAll('.dot')];
+    <section class="section bg-dark text-white">
+        <div class="container text-center">
+            <h2 class="section-title text-white">Apa Kata Mereka?</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>"Harga di Griya Mandiri paling kompetitif di kota ini. Stok sembako warung saya selalu aman."</p>
+                    <h5>- Ibu Sumiati (Pemilik Warung)</h5>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Pelayanannya cepat sekali. Pesan pagi, siang sudah bisa diambil. Sangat membantu bisnis reseller saya."</p>
+                    <h5>- Budi Santoso (Reseller UMKM)</h5>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      const updateSlider = () => {
-        track.style.transform = `translateX(-${current * 100}%)`;
-        dotEls.forEach((dot, idx) => {
-          dot.className = `dot h-2.5 rounded-full transition-all ${idx === current ? 'bg-accent-500 w-8' : 'bg-slate-300 dark:bg-white/20 w-2.5'}`;
-        });
-      };
+    <section id="kontak" class="section">
+        <div class="container">
+            <div class="flex-row">
+                <div class="flex-col">
+                    <h3>Lokasi & Jam Operasional</h3>
+                    <p><i class="fas fa-location-dot"></i> Jl. Raya Grosir No. 123, Pusat Kota</p>
+                    <div class="hours">
+                        <p><strong>Senin — Sabtu:</strong> 08:00 – 20:00</p>
+                        <p><strong>Minggu:</strong> 09:00 – 17:00</p>
+                    </div>
+                    <div class="contact-links">
+                        <a href="tel:081234567890" class="btn-text"><i class="fas fa-phone"></i> 0812-3456-7890</a>
+                    </div>
+                </div>
+                <div class="flex-col">
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.000000000000!2d110.0000000!3d-7.0000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMDAnMDAuMCJTIDExMMKwMDAnMDAuMCJF!5e0!3m2!1sid!2sid!4v1620000000000!5m2!1sid!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      document.getElementById('prevTestimonial').addEventListener('click', () => {
-        current = (current - 1 + testimonials.length) % testimonials.length;
-        updateSlider();
-      });
-      document.getElementById('nextTestimonial').addEventListener('click', () => {
-        current = (current + 1) % testimonials.length;
-        updateSlider();
-      });
-      dotEls.forEach((dot, idx) => dot.addEventListener('click', () => {
-        current = idx;
-        updateSlider();
-      }));
-      setInterval(() => {
-        current = (current + 1) % testimonials.length;
-        updateSlider();
-      }, 4500);
-    }
+    <footer>
+        <div class="container text-center">
+            <div class="footer-logo">GRIYA MANDIRI GROSIR</div>
+            <p>&copy; 2026 Griya Mandiri Grosir. All Rights Reserved.</p>
+            <div class="socials">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
 
-    function setupMenu() {
-      const menuBtn = document.getElementById('menuBtn');
-      const mobileMenu = document.getElementById('mobileMenu');
-      menuBtn.addEventListener('click', () => {
-        const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
-        menuBtn.setAttribute('aria-expanded', String(!expanded));
-        mobileMenu.classList.toggle('hidden');
-      });
-      mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-        menuBtn.setAttribute('aria-expanded', 'false');
-      }));
-    }
+    <a href="https://wa.me/6281234567890" class="floating-wa" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span>Chat via WhatsApp</span>
+    </a>
 
-    function setupScrollReveal() {
-      const items = document.querySelectorAll('.section-fade');
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) entry.target.classList.add('in-view');
-        });
-      }, { threshold: 0.12 });
-      items.forEach(item => io.observe(item));
-    }
-
-    function setupGlobalWaLinks() {
-      const url = waLink(brandConfig.defaultMessage);
-      ['heroWaBtn','navWaBtn','mobileWaBtn','closingWaBtn','floatingWaBtn','footerWaBtn'].forEach(id => {
-        const el = document.getElementById(id);
-        if (!el) return;
-        el.href = url;
-        if (id !== 'footerWaBtn') {
-          el.target = '_blank';
-          el.rel = 'noopener noreferrer';
-        }
-      });
-    }
-
-    function setupCurrentYear() {
-      document.title = `${brandConfig.brandName} | Tinggal Kukus & Siap Dinikmati`;
-    }
-
-    renderAdvantages();
-    renderProducts();
-    renderSteps();
-    renderPromos();
-    renderFaqs();
-    renderTestimonials();
-    setupThemeToggle();
-    setupMenu();
-    setupScrollReveal();
-    setupGlobalWaLinks();
-    setupCurrentYear();
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FoodEstablishment",
-    "name": "Dimsumku Premium",
-    "description": "Dimsum frozen premium halal untuk keluarga, reseller, anak kos, dan UMKM kuliner.",
-    "servesCuisine": "Dimsum",
-    "priceRange": "Rp22.000 - Rp31.000",
-    "telephone": "+62 812-3456-7890",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Jl. Contoh Kuliner No. 88",
-      "addressLocality": "Kota Anda",
-      "addressCountry": "ID"
-    },
-    "sameAs": [
-      "https://instagram.com",
-      "https://www.tiktok.com",
-      "https://facebook.com"
-    ]
-  }
-  </script>
 </body>
 </html>
