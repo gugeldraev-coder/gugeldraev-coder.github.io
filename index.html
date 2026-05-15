@@ -3,245 +3,641 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dimsum Frozen Premium | Tinggal Kukus & Siap Dinikmati</title>
-  <meta name="description" content="Dimsum frozen premium yang lezat, praktis, halal, dan cocok untuk camilan, stok di rumah, maupun jualan kembali. Pesan cepat via WhatsApp." />
-  <meta name="keywords" content="dimsum frozen, dimsum premium, frozen food halal, dimsum reseller, siomay frozen, hakau frozen" />
-  <meta name="author" content="Perplexity" />
+  <title>Tiramisu Lab (TiraLab) — The Ultimate Tiramisu Series</title>
+  <meta name="description" content="Landing page modern untuk Tiramisu Lab (TiraLab), dessert box premium dengan nuansa Creamy Espresso, desain conversion-focused, mobile-first, dan tanpa backend." />
+  <meta name="theme-color" content="#3b2418" />
+  <meta property="og:title" content="Tiramisu Lab — The Ultimate Tiramisu Series" />
+  <meta property="og:description" content="A Little Slice of Italy in Every Box. Dessert box premium dengan espresso asli, mascarpone creamy, dan cita rasa artisan." />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Dimsum Frozen Premium, Tinggal Kukus & Siap Dinikmati" />
-  <meta property="og:description" content="Lezat, praktis, halal, dan cocok untuk camilan maupun jualan kembali." />
-  <meta property="og:image" content="https://picsum.photos/seed/dimsum-hero-og/1200/630" />
-  <meta property="og:locale" content="id_ID" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="theme-color" content="#ef4444" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=clash-display@500,600,700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: ['class', '[data-theme="dark"]'],
       theme: {
         extend: {
-          colors: {
-            brand: {
-              50: '#fff7ed',
-              100: '#ffedd5',
-              200: '#fed7aa',
-              300: '#fdba74',
-              400: '#fb923c',
-              500: '#f97316',
-              600: '#ea580c',
-              700: '#c2410c',
-              800: '#9a3412',
-              900: '#7c2d12'
-            },
-            accent: {
-              500: '#ef4444',
-              600: '#dc2626',
-              700: '#b91c1c'
-            },
-            ink: '#1f1b16'
-          },
           fontFamily: {
-            sans: ['Satoshi', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-            display: ['Clash Display', 'Satoshi', 'ui-sans-serif', 'system-ui', 'sans-serif']
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            display: ['Playfair Display', 'Georgia', 'serif']
+          },
+          colors: {
+            espresso: {
+              50: '#fdf8f4',
+              100: '#f7efe6',
+              200: '#ecd8c7',
+              300: '#ddb79a',
+              400: '#c78f67',
+              500: '#af6d45',
+              600: '#8e5634',
+              700: '#6f4228',
+              800: '#4d2e1d',
+              900: '#3b2418',
+              950: '#1b120d'
+            },
+            gold: {
+              50: '#fffaf0',
+              100: '#fdf0cf',
+              200: '#f8df9d',
+              300: '#f1ca6b',
+              400: '#e4b53d',
+              500: '#c99b1f',
+              600: '#a47b12'
+            }
           },
           boxShadow: {
-            soft: '0 10px 30px rgba(239, 68, 68, 0.10)',
-            card: '0 14px 40px rgba(15, 23, 42, 0.08)',
-            glow: '0 18px 55px rgba(249, 115, 22, 0.18)'
+            soft: '0 12px 40px rgba(28, 18, 13, 0.10)',
+            premium: '0 18px 60px rgba(28, 18, 13, 0.16)',
+            float: '0 20px 60px rgba(59, 36, 24, 0.22)'
+          },
+          backgroundImage: {
+            'hero-gradient': 'radial-gradient(circle at top left, rgba(241,202,107,0.22), transparent 32%), radial-gradient(circle at 80% 20%, rgba(193,140,93,0.18), transparent 26%), linear-gradient(135deg, #fffaf5 0%, #f8f0e8 40%, #f4eadf 100%)',
+            'promo-gradient': 'linear-gradient(135deg, #3b2418 0%, #5b3925 50%, #7a5132 100%)'
           },
           keyframes: {
             floaty: {
-              '0%,100%': { transform: 'translateY(0px)' },
+              '0%, 100%': { transform: 'translateY(0px)' },
               '50%': { transform: 'translateY(-10px)' }
             },
-            fadeUp: {
-              '0%': { opacity: '0', transform: 'translateY(24px)' },
-              '100%': { opacity: '1', transform: 'translateY(0)' }
+            pulseSoft: {
+              '0%, 100%': { transform: 'scale(1)', opacity: '1' },
+              '50%': { transform: 'scale(1.03)', opacity: '.92' }
             },
-            pulseRing: {
-              '0%': { boxShadow: '0 0 0 0 rgba(239,68,68,.45)' },
-              '70%': { boxShadow: '0 0 0 14px rgba(239,68,68,0)' },
-              '100%': { boxShadow: '0 0 0 0 rgba(239,68,68,0)' }
+            marquee: {
+              '0%': { transform: 'translateX(0)' },
+              '100%': { transform: 'translateX(-50%)' }
             }
           },
           animation: {
-            floaty: 'floaty 5s ease-in-out infinite',
-            fadeUp: 'fadeUp .8s cubic-bezier(.16,1,.3,1) both',
-            pulseRing: 'pulseRing 2.2s infinite'
+            floaty: 'floaty 4s ease-in-out infinite',
+            pulseSoft: 'pulseSoft 2.5s ease-in-out infinite',
+            marquee: 'marquee 18s linear infinite'
           }
         }
       }
     }
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script defer src="https://unpkg.com/lucide@latest"></script>
   <style>
     :root {
-      --bg: #fffaf7;
-      --surface: rgba(255,255,255,.82);
-      --text: #1f1b16;
-      --muted: #6b5f57;
-      --line: rgba(31,27,22,.08);
-      --hero: radial-gradient(circle at top left, rgba(239,68,68,.14), transparent 30%), radial-gradient(circle at 80% 10%, rgba(249,115,22,.16), transparent 25%), linear-gradient(180deg, #fff7ed 0%, #fffaf7 55%, #ffffff 100%);
+      --bg: #fffaf5;
+      --surface: rgba(255,255,255,.84);
+      --surface-2: rgba(255,255,255,.70);
+      --text: #241710;
+      --muted: #6f5747;
+      --line: rgba(91,57,37,.12);
+      --brand: #3b2418;
+      --accent: #c99b1f;
+      --wa: #25D366;
     }
-    [data-theme="dark"] {
-      --bg: #18120f;
-      --surface: rgba(38,24,19,.88);
-      --text: #fff6ef;
-      --muted: #d5c5bb;
-      --line: rgba(255,255,255,.10);
-      --hero: radial-gradient(circle at top left, rgba(239,68,68,.16), transparent 30%), radial-gradient(circle at 80% 10%, rgba(249,115,22,.12), transparent 25%), linear-gradient(180deg, #231814 0%, #18120f 60%, #120d0b 100%);
-    }
-    html { scroll-padding-top: 88px; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: 'Satoshi', ui-sans-serif, system-ui, sans-serif;
+      font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--text);
       overflow-x: hidden;
     }
-    .glass { background: var(--surface); backdrop-filter: blur(14px); }
-    .section-fade { opacity: 0; transform: translateY(24px); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
-    .section-fade.in-view { opacity: 1; transform: translateY(0); }
-    .hero-bg { background: var(--hero); }
-    .grid-auto { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-    .grid-products { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-    .text-gradient {
-      background: linear-gradient(135deg, #dc2626, #f97316 70%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+    .font-display { font-family: 'Playfair Display', serif; }
+    .glass {
+      background: linear-gradient(135deg, rgba(255,255,255,.66), rgba(255,255,255,.30));
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,.34);
     }
-    .floating-shadow { box-shadow: 0 14px 50px rgba(220, 38, 38, .12); }
-    .card-hover { transition: transform .28s cubic-bezier(.16,1,.3,1), box-shadow .28s cubic-bezier(.16,1,.3,1), border-color .28s; }
-    .card-hover:hover { transform: translateY(-8px); box-shadow: 0 18px 50px rgba(15,23,42,.10); }
-    .btn-lift { transition: transform .24s cubic-bezier(.16,1,.3,1), box-shadow .24s cubic-bezier(.16,1,.3,1), background-color .24s; }
-    .btn-lift:hover { transform: translateY(-2px); }
-    .noise::before {
+    .card-premium {
+      background: rgba(255,255,255,.84);
+      border: 1px solid var(--line);
+      box-shadow: 0 16px 40px rgba(27,18,13,.08);
+      border-radius: 1.5rem;
+    }
+    .section-pad { padding: 4.5rem 0; }
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .nav-link.active {
+      color: #3b2418;
+      background: rgba(201,155,31,.12);
+    }
+    .faq-content {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows .35s ease;
+    }
+    .faq-item.active .faq-content { grid-template-rows: 1fr; }
+    .faq-content > div { overflow: hidden; }
+    .tiktok-frame::before {
       content: '';
       position: absolute;
       inset: 0;
-      background-image: radial-gradient(rgba(255,255,255,.18) 1px, transparent 1px);
-      background-size: 16px 16px;
-      opacity: .08;
+      background: linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.55));
+      border-radius: inherit;
+    }
+    .video-bars span {
+      display: block;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(255,255,255,.7), rgba(255,255,255,.2));
+      border-radius: 999px;
+      animation: pulseSoft 1.2s ease-in-out infinite;
+    }
+    .video-bars span:nth-child(2) { animation-delay: .2s; }
+    .video-bars span:nth-child(3) { animation-delay: .4s; }
+    .video-bars span:nth-child(4) { animation-delay: .1s; }
+    .video-bars span:nth-child(5) { animation-delay: .3s; }
+    .partner-track { width: max-content; }
+    .loading-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 70;
+      background: linear-gradient(135deg, #fff8f2, #f3e6da);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity .45s ease, visibility .45s ease;
+    }
+    .loading-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
       pointer-events: none;
     }
-    .testimonial-track { transition: transform .5s cubic-bezier(.16,1,.3,1); }
-    .faq-content { max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s ease; }
+    .fake-order {
+      transform: translateY(120%);
+      opacity: 0;
+      transition: transform .45s ease, opacity .45s ease;
+    }
+    .fake-order.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .hero-image-wrap {
+      position: relative;
+      isolation: isolate;
+    }
+    .hero-image-wrap::after {
+      content: '';
+      position: absolute;
+      inset: auto 10% -12% 10%;
+      height: 28%;
+      background: radial-gradient(circle, rgba(201,155,31,.24), transparent 65%);
+      z-index: -1;
+      filter: blur(30px);
+    }
+    .gallery-grid img,
+    .menu-card img,
+    .hero-img,
+    .testimonial-avatar {
+      object-fit: cover;
+    }
+    .bg-grid {
+      background-image: linear-gradient(rgba(91,57,37,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(91,57,37,.05) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    @media (max-width: 767px) {
+      .section-pad { padding: 3.75rem 0; }
+    }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .section-fade, .testimonial-track, .card-hover, .btn-lift { transition: none !important; }
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
     }
   </style>
 </head>
-<body class="selection:bg-red-200/60 selection:text-ink">
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:text-slate-900">Lewati ke konten</a>
+<body class="selection:bg-gold-200/70 selection:text-espresso-900">
+  <!-- Loading Overlay -->
+  <div id="loadingOverlay" class="loading-overlay">
+    <div class="text-center">
+      <div class="mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-soft">
+        <div class="h-10 w-10 rounded-full border-[5px] border-espresso-200 border-t-espresso-800 animate-spin"></div>
+      </div>
+      <p class="font-display text-2xl text-espresso-900">Tiramisu Lab</p>
+      <p class="mt-2 text-sm text-espresso-700">Menyiapkan dessert premium Anda...</p>
+    </div>
+  </div>
 
-  <header class="sticky top-0 z-50 border-b border-black/5 bg-white/80 backdrop-blur-xl dark:border-white/10 dark:bg-[#18120f]/85">
-    <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8" aria-label="Navigasi utama">
-      <a href="#hero" class="flex items-center gap-3" aria-label="Brand Dimsumku Premium">
-        <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-accent-500 to-brand-500 text-white shadow-soft">
-          <svg viewBox="0 0 48 48" class="h-6 w-6" fill="none" aria-hidden="true">
-            <path d="M11 27c0-8 6.2-14 13-14s13 6 13 14c0 5.5-4.5 10-10 10H21c-5.5 0-10-4.5-10-10Z" stroke="currentColor" stroke-width="2.8"/>
-            <path d="M16 23c2-3 4.8-4.5 8-4.5 3.1 0 6 1.5 8 4.5" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/>
-            <path d="M18 28h12" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/>
-          </svg>
-        </span>
-        <div>
-          <p class="font-display text-lg font-semibold tracking-tight">Dimsumku Premium</p>
-          <p class="text-xs text-slate-500 dark:text-slate-400">Frozen food halal & praktis</p>
+  <!-- Fake Live Order Popup -->
+  <div id="liveOrderPopup" class="fake-order fixed bottom-24 left-4 z-50 max-w-[320px] rounded-2xl border border-white/30 bg-white/90 p-4 shadow-float backdrop-blur-lg md:left-6">
+    <div class="flex items-start gap-3">
+      <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+        <i data-lucide="shopping-bag" class="h-5 w-5"></i>
+      </div>
+      <div>
+        <p class="text-sm font-semibold text-espresso-900"><span id="orderName">Nadia</span> baru saja order <span id="orderMenu">Classic Italian Tiramisu</span></p>
+        <p class="mt-1 text-xs text-espresso-600"><span id="orderCity">Jakarta Selatan</span> • <span id="orderTime">1 menit lalu</span></p>
+      </div>
+      <button id="closePopup" class="rounded-full p-1 text-espresso-400 hover:bg-espresso-100 hover:text-espresso-800" aria-label="Tutup popup order">
+        <i data-lucide="x" class="h-4 w-4"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/6281234567890?text=Halo%20TiraLab%2C%20saya%20ingin%20order%20The%20Ultimate%20Tiramisu%20Series." target="_blank" rel="noopener noreferrer" class="fixed bottom-24 right-4 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-float transition hover:-translate-y-1 hover:scale-105 md:bottom-6 md:right-6" aria-label="Chat WhatsApp">
+    <i class="fa-brands fa-whatsapp text-[1.65rem]"></i>
+  </a>
+
+  <!-- Sticky Mobile Bottom CTA -->
+  <div class="fixed inset-x-0 bottom-0 z-40 border-t border-espresso-200/70 bg-white/92 px-4 py-3 backdrop-blur-lg md:hidden">
+    <div class="mx-auto flex max-w-xl items-center gap-3">
+      <div class="min-w-0 flex-1">
+        <p class="text-xs font-medium uppercase tracking-[0.24em] text-espresso-500">Promo hari ini</p>
+        <p class="truncate text-sm font-semibold text-espresso-900">2 Personal Box + Gratis 1 Ice Americano</p>
+      </div>
+      <a href="https://wa.me/6281234567890?text=Halo%20TiraLab%2C%20saya%20mau%20ambil%20promo%202%20Personal%20Box%20gratis%201%20Ice%20Americano." target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 items-center justify-center rounded-full bg-espresso-800 px-5 text-sm font-semibold text-white shadow-soft transition hover:bg-espresso-900">Order</a>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header id="siteHeader" class="fixed inset-x-0 top-0 z-40 transition-all duration-300">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <nav class="mt-3 flex items-center justify-between rounded-full border border-white/50 bg-white/72 px-4 py-3 shadow-soft backdrop-blur-xl md:px-6">
+        <a href="#hero" class="flex items-center gap-3" aria-label="Tiramisu Lab home">
+          <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-espresso-900 text-gold-200 shadow-soft">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 16.5C5 12.91 7.91 10 11.5 10H17V16.5C17 18.99 14.99 21 12.5 21H9.5C7.01 21 5 18.99 5 16.5Z" fill="currentColor" opacity="0.95"/>
+              <path d="M8 10C8 6.69 10.69 4 14 4H18.25C19.22 4 20 4.78 20 5.75C20 8.1 18.1 10 15.75 10H8Z" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <div>
+            <p class="font-display text-xl leading-none text-espresso-900">TiraLab</p>
+            <p class="text-[11px] uppercase tracking-[0.3em] text-espresso-500">Premium Tiramisu</p>
+          </div>
+        </a>
+
+        <div class="hidden items-center gap-2 md:flex">
+          <a href="#keunggulan" class="nav-link rounded-full px-4 py-2 text-sm font-medium text-espresso-700 hover:bg-espresso-100">Keunggulan</a>
+          <a href="#menu" class="nav-link rounded-full px-4 py-2 text-sm font-medium text-espresso-700 hover:bg-espresso-100">Menu</a>
+          <a href="#promo" class="nav-link rounded-full px-4 py-2 text-sm font-medium text-espresso-700 hover:bg-espresso-100">Promo</a>
+          <a href="#testimoni" class="nav-link rounded-full px-4 py-2 text-sm font-medium text-espresso-700 hover:bg-espresso-100">Review</a>
+          <a href="#faq" class="nav-link rounded-full px-4 py-2 text-sm font-medium text-espresso-700 hover:bg-espresso-100">FAQ</a>
         </div>
-      </a>
 
-      <div class="hidden items-center gap-7 md:flex">
-        <a href="#keunggulan" class="text-sm font-medium text-slate-700 transition hover:text-accent-600 dark:text-slate-200">Keunggulan</a>
-        <a href="#produk" class="text-sm font-medium text-slate-700 transition hover:text-accent-600 dark:text-slate-200">Produk</a>
-        <a href="#cara-order" class="text-sm font-medium text-slate-700 transition hover:text-accent-600 dark:text-slate-200">Cara Order</a>
-        <a href="#testimoni" class="text-sm font-medium text-slate-700 transition hover:text-accent-600 dark:text-slate-200">Testimoni</a>
-        <a href="#faq" class="text-sm font-medium text-slate-700 transition hover:text-accent-600 dark:text-slate-200">FAQ</a>
-      </div>
+        <div class="flex items-center gap-2">
+          <a href="https://wa.me/6281234567890?text=Halo%20TiraLab%2C%20saya%20ingin%20order%20sekarang." target="_blank" rel="noopener noreferrer" class="hidden min-h-11 items-center rounded-full bg-espresso-800 px-5 text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-espresso-900 md:inline-flex">Order Sekarang</a>
+          <button id="menuToggle" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-espresso-200 text-espresso-800 md:hidden" aria-label="Buka menu mobile" aria-expanded="false">
+            <i data-lucide="menu" class="h-5 w-5"></i>
+          </button>
+        </div>
+      </nav>
 
-      <div class="flex items-center gap-2 sm:gap-3">
-        <button data-theme-toggle class="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white text-slate-700 transition hover:-translate-y-0.5 hover:border-accent-200 hover:text-accent-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-100" aria-label="Ganti tema">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-        </button>
-        <a id="navWaBtn" href="#" class="btn-lift hidden rounded-full bg-accent-500 px-5 py-3 text-sm font-bold text-white shadow-soft hover:bg-accent-600 sm:inline-flex">Pesan Sekarang</a>
-        <button id="menuBtn" class="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white md:hidden dark:border-white/10 dark:bg-white/5" aria-label="Buka menu" aria-expanded="false" aria-controls="mobileMenu">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </button>
-      </div>
-    </nav>
-
-    <div id="mobileMenu" class="hidden border-t border-black/5 bg-white/95 px-4 py-4 backdrop-blur-xl dark:border-white/10 dark:bg-[#18120f]/95 md:hidden">
-      <div class="flex flex-col gap-3">
-        <a href="#keunggulan" class="rounded-2xl px-3 py-3 text-sm font-medium hover:bg-orange-50 dark:hover:bg-white/5">Keunggulan</a>
-        <a href="#produk" class="rounded-2xl px-3 py-3 text-sm font-medium hover:bg-orange-50 dark:hover:bg-white/5">Produk</a>
-        <a href="#cara-order" class="rounded-2xl px-3 py-3 text-sm font-medium hover:bg-orange-50 dark:hover:bg-white/5">Cara Order</a>
-        <a href="#testimoni" class="rounded-2xl px-3 py-3 text-sm font-medium hover:bg-orange-50 dark:hover:bg-white/5">Testimoni</a>
-        <a href="#faq" class="rounded-2xl px-3 py-3 text-sm font-medium hover:bg-orange-50 dark:hover:bg-white/5">FAQ</a>
-        <a id="mobileWaBtn" href="#" class="rounded-2xl bg-accent-500 px-4 py-3 text-center text-sm font-bold text-white">Pesan via WhatsApp</a>
+      <div id="mobileMenu" class="mt-3 hidden rounded-3xl border border-white/40 bg-white/88 p-4 shadow-soft backdrop-blur-xl md:hidden">
+        <div class="flex flex-col gap-2">
+          <a href="#keunggulan" class="mobile-nav rounded-2xl px-4 py-3 text-sm font-medium text-espresso-800 hover:bg-espresso-100">Keunggulan</a>
+          <a href="#menu" class="mobile-nav rounded-2xl px-4 py-3 text-sm font-medium text-espresso-800 hover:bg-espresso-100">Menu</a>
+          <a href="#video" class="mobile-nav rounded-2xl px-4 py-3 text-sm font-medium text-espresso-800 hover:bg-espresso-100">Video</a>
+          <a href="#promo" class="mobile-nav rounded-2xl px-4 py-3 text-sm font-medium text-espresso-800 hover:bg-espresso-100">Promo</a>
+          <a href="#testimoni" class="mobile-nav rounded-2xl px-4 py-3 text-sm font-medium text-espresso-800 hover:bg-espresso-100">Testimoni</a>
+          <a href="#faq" class="mobile-nav rounded-2xl px-4 py-3 text-sm font-medium text-espresso-800 hover:bg-espresso-100">FAQ</a>
+          <a href="https://wa.me/6281234567890?text=Halo%20TiraLab%2C%20saya%20ingin%20order%20The%20Ultimate%20Tiramisu%20Series." target="_blank" rel="noopener noreferrer" class="mt-2 inline-flex min-h-11 items-center justify-center rounded-full bg-espresso-800 px-5 py-3 text-sm font-semibold text-white">Chat WhatsApp</a>
+        </div>
       </div>
     </div>
   </header>
 
-  <main id="main-content">
-    <section id="hero" class="hero-bg relative isolate overflow-hidden">
-      <div class="noise absolute inset-0"></div>
-      <div class="mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 sm:px-6 md:py-20 lg:grid-cols-[1.08fr_.92fr] lg:px-8 lg:py-24">
-        <div class="relative z-10 section-fade in-view">
-          <span class="inline-flex items-center gap-2 rounded-full border border-red-200 bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-accent-600 shadow-soft dark:border-red-400/20 dark:bg-white/5 dark:text-orange-200">Frozen food premium untuk keluarga & reseller</span>
-          <h1 class="mt-5 max-w-3xl font-display text-4xl font-semibold leading-[1.02] tracking-tight text-ink sm:text-5xl lg:text-6xl dark:text-white">
-            Dimsum Frozen Premium, <span class="text-gradient">Tinggal Kukus</span> & Siap Dinikmati
-          </h1>
-          <p class="mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
-            Lezat, praktis, halal, dan cocok untuk camilan maupun jualan kembali. Stok sekali, nikmati kapan saja—tanpa ribet, tanpa rasa biasa.
-          </p>
-
-          <div class="mt-7 flex flex-col gap-3 sm:flex-row">
-            <a id="heroWaBtn" href="#" class="btn-lift inline-flex min-h-[52px] items-center justify-center rounded-full bg-accent-500 px-6 py-3 text-sm font-bold text-white shadow-soft hover:bg-accent-600">Pesan Sekarang</a>
-            <a href="#produk" class="btn-lift inline-flex min-h-[52px] items-center justify-center rounded-full border border-slate-300 bg-white/80 px-6 py-3 text-sm font-bold text-slate-800 hover:border-orange-300 hover:text-accent-600 dark:border-white/15 dark:bg-white/5 dark:text-white">Lihat Menu</a>
+  <main id="mainContent" class="pb-28 md:pb-0">
+    <!-- Hero Section -->
+    <section id="hero" class="relative overflow-hidden bg-hero-gradient pt-32 md:pt-36">
+      <div class="absolute inset-0 bg-grid opacity-50"></div>
+      <div class="relative mx-auto grid max-w-7xl items-center gap-10 px-4 pb-16 sm:px-6 lg:grid-cols-[1.05fr_.95fr] lg:px-8 lg:pb-24">
+        <div class="reveal">
+          <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-gold-200 bg-white/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-espresso-700 shadow-soft backdrop-blur-md">
+            <span class="inline-block h-2.5 w-2.5 rounded-full bg-gold-400 animate-pulse"></span>
+            Fresh Batch Daily • Dessert 2026 Favorite
           </div>
 
-          <div class="mt-8 flex flex-wrap gap-3">
-            <span class="rounded-full bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-soft dark:bg-white/5 dark:text-slate-100">Halal</span>
-            <span class="rounded-full bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-soft dark:bg-white/5 dark:text-slate-100">Tanpa Pengawet</span>
-            <span class="rounded-full bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-soft dark:bg-white/5 dark:text-slate-100">Homemade</span>
-            <span class="rounded-full bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-soft dark:bg-white/5 dark:text-slate-100">Fresh Frozen</span>
+          <div class="mb-6 flex flex-wrap gap-3">
+            <div class="glass inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-espresso-800">
+              <i data-lucide="sparkles" class="h-4 w-4 text-gold-500"></i>
+              Dessert Box & Artisan Cake
+            </div>
+            <div class="glass inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-espresso-800">
+              <i data-lucide="star" class="h-4 w-4 fill-gold-400 text-gold-400"></i>
+              Rating 4.9/5
+            </div>
           </div>
 
-          <div class="mt-8 grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-4">
-            <div class="rounded-2xl border border-black/5 bg-white/75 p-4 shadow-soft dark:border-white/10 dark:bg-white/5">
-              <p class="text-2xl font-black text-accent-600">1.2K+</p>
-              <p class="text-sm text-slate-600 dark:text-slate-300">Order puas</p>
+          <h1 class="max-w-3xl font-display text-4xl leading-tight text-espresso-950 sm:text-5xl lg:text-6xl">The Ultimate Tiramisu Series untuk momen manis yang terasa <span class="text-gold-500">premium</span> sejak suapan pertama.</h1>
+          <p class="mt-5 max-w-2xl text-base leading-7 text-espresso-700 sm:text-lg">&quot;A Little Slice of Italy in Every Box&quot; — dessert box premium dengan ladyfingers yang direndam espresso asli, lapisan mascarpone cheese creamy, dan cocoa powder kualitas ekspor. Dibuat fresh setiap hari tanpa pemanis buatan.</p>
+
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="https://wa.me/6281234567890?text=Halo%20TiraLab%2C%20saya%20mau%20order%20The%20Ultimate%20Tiramisu%20Series." target="_blank" rel="noopener noreferrer" class="inline-flex min-h-12 items-center justify-center rounded-full bg-espresso-800 px-6 py-3 text-sm font-semibold text-white shadow-premium transition hover:-translate-y-0.5 hover:bg-espresso-900">
+              <i class="fa-brands fa-whatsapp mr-2 text-lg"></i>
+              Order via WhatsApp
+            </a>
+            <a href="#menu" class="inline-flex min-h-12 items-center justify-center rounded-full border border-espresso-200 bg-white/75 px-6 py-3 text-sm font-semibold text-espresso-900 shadow-soft transition hover:-translate-y-0.5 hover:border-gold-300 hover:bg-white">
+              Lihat Menu
+              <i data-lucide="arrow-right" class="ml-2 h-4 w-4"></i>
+            </a>
+          </div>
+
+          <div class="mt-8 grid max-w-xl grid-cols-2 gap-3 sm:grid-cols-3">
+            <div class="card-premium p-4">
+              <p class="text-xs uppercase tracking-[0.22em] text-espresso-500">Mascarpone</p>
+              <p class="mt-2 text-lg font-bold text-espresso-950">100% Authentic</p>
             </div>
-            <div class="rounded-2xl border border-black/5 bg-white/75 p-4 shadow-soft dark:border-white/10 dark:bg-white/5">
-              <p class="text-2xl font-black text-accent-600">6</p>
-              <p class="text-sm text-slate-600 dark:text-slate-300">Varian favorit</p>
+            <div class="card-premium p-4">
+              <p class="text-xs uppercase tracking-[0.22em] text-espresso-500">Kopi</p>
+              <p class="mt-2 text-lg font-bold text-espresso-950">Arabika Pilihan</p>
             </div>
-            <div class="rounded-2xl border border-black/5 bg-white/75 p-4 shadow-soft dark:border-white/10 dark:bg-white/5">
-              <p class="text-2xl font-black text-accent-600">4.9/5</p>
-              <p class="text-sm text-slate-600 dark:text-slate-300">Rating pelanggan</p>
-            </div>
-            <div class="rounded-2xl border border-black/5 bg-white/75 p-4 shadow-soft dark:border-white/10 dark:bg-white/5">
-              <p class="text-2xl font-black text-accent-600">Fast</p>
-              <p class="text-sm text-slate-600 dark:text-slate-300">Respon WhatsApp</p>
+            <div class="card-premium p-4 col-span-2 sm:col-span-1">
+              <p class="text-xs uppercase tracking-[0.22em] text-espresso-500">Less Sugar</p>
+              <p class="mt-2 text-lg font-bold text-espresso-950">Available</p>
             </div>
           </div>
         </div>
 
-        <div class="relative section-fade lg:justify-self-end">
-          <div class="absolute -left-4 top-10 hidden h-24 w-24 rounded-full bg-red-200/60 blur-2xl lg:block"></div>
-          <div class="absolute -right-4 bottom-8 hidden h-28 w-28 rounded-full bg-orange-300/50 blur-2xl lg:block"></div>
-          <div class="relative mx-auto max-w-xl animate-floaty rounded-[2rem] border border-white/60 bg-white/60 p-3 shadow-glow backdrop-blur-xl dark:border-white/10 dark:bg-white/5">
-            <img src="1-hero.png" alt="Dimsum frozen premium disajikan hangat di atas piring" width="900" height="760" loading="eager" decoding="async" class="h-full min-h-[360px] w-full rounded-[1.6rem] object-cover" />
-            <div class="absolute inset-x-5 bottom-5 rounded-3xl bg-white/90 p-4 shadow-card backdrop-blur dark:bg-[#241914]/90">
-              <div class="flex items-start justify-between gap-4">
-                <div>
-                  <p class="text-xs font-bold uppercase tracking-[0.16em] text-accent-600">Best seller minggu ini</p>
-                  <p class="mt-1 text-lg font-bold">Dimsum Ayam Premium</p>
-                  <p class="text-sm text-slate-600 dark:text-slate-300">Tekstur juicy, isi padat, cocok untuk stok rumah atau dijual lagi.</p>
+        <div class="reveal hero-image-wrap">
+          <div class="relative mx-auto max-w-xl">
+            <div class="absolute -left-4 top-10 z-20 rounded-2xl bg-gold-100 px-4 py-3 shadow-soft animate-floaty md:-left-10">
+              <p class="text-xs uppercase tracking-[0.24em] text-espresso-500">Promo Bundle</p>
+              <p class="mt-1 text-sm font-bold text-espresso-900">Buy 2 Personal Box<br>Free Ice Americano</p>
+            </div>
+            <div class="absolute -right-2 bottom-10 z-20 rounded-2xl bg-white/90 px-4 py-3 shadow-premium backdrop-blur-md md:-right-8">
+              <div class="flex items-center gap-2">
+                <div class="flex -space-x-2">
+                  <img src="https://i.pravatar.cc/48?img=12" alt="Avatar pelanggan" width="32" height="32" class="h-8 w-8 rounded-full border-2 border-white" loading="lazy">
+                  <img src="https://i.pravatar.cc/48?img=24" alt="Avatar pelanggan" width="32" height="32" class="h-8 w-8 rounded-full border-2 border-white" loading="lazy">
+                  <img src="https://i.pravatar.cc/48?img=31" alt="Avatar pelanggan" width="32" height="32" class="h-8 w-8 rounded-full border-2 border-white" loading="lazy">
                 </div>
-                <span class="rounded-full bg-orange-100 px-3 py-1 text-xs font-bold text-orange-700 dark:bg-orange-500/15 dark:text-orange-200">Promo</span>
+                <div>
+                  <p class="text-sm font-bold text-espresso-950">2.480+ happy bites</p>
+                  <p class="text-xs text-espresso-500">Loved by coffee lovers & office crowd</p>
+                </div>
+              </div>
+            </div>
+            <div class="rounded-[2rem] border border-white/50 bg-white/65 p-3 shadow-premium backdrop-blur-xl">
+              <img src="1.png" alt="Dummy hero produk tiramisu premium" width="900" height="980" class="hero-img aspect-[4/4.3] w-full rounded-[1.6rem] object-cover" fetchpriority="high">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="section-pad relative overflow-hidden">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-4 md:grid-cols-4">
+          <div class="reveal card-premium p-6">
+            <p class="text-sm uppercase tracking-[0.22em] text-espresso-500">Pelanggan puas</p>
+            <p class="mt-3 text-3xl font-bold text-espresso-950">12.5K+</p>
+            <p class="mt-2 text-sm text-espresso-600">Repeat order dari Gen Z, coffee lovers, dan pekerja kantoran.</p>
+          </div>
+          <div class="reveal card-premium p-6">
+            <p class="text-sm uppercase tracking-[0.22em] text-espresso-500">Rating dummy</p>
+            <p class="mt-3 text-3xl font-bold text-espresso-950">4.9/5</p>
+            <p class="mt-2 text-sm text-espresso-600">Berdasarkan 2.3K+ ulasan pelanggan di kanal sosial.</p>
+          </div>
+          <div class="reveal card-premium p-6">
+            <p class="text-sm uppercase tracking-[0.22em] text-espresso-500">Pesanan selesai</p>
+            <p class="mt-3 text-3xl font-bold text-espresso-950">28K+</p>
+            <p class="mt-2 text-sm text-espresso-600">Dessert box terkirim aman untuk takeaway dan delivery.</p>
+          </div>
+          <div class="reveal card-premium p-6">
+            <p class="text-sm uppercase tracking-[0.22em] text-espresso-500">Best seller</p>
+            <p class="mt-3 text-3xl font-bold text-espresso-950">Classic</p>
+            <p class="mt-2 text-sm text-espresso-600">Original recipe yang paling sering masuk keranjang checkout.</p>
+          </div>
+        </div>
+
+        <div class="reveal mt-8 rounded-[2rem] border border-espresso-200/80 bg-white/70 p-5 shadow-soft backdrop-blur-lg">
+          <div class="mb-4 flex items-center justify-between gap-3">
+            <div>
+              <p class="text-sm uppercase tracking-[0.24em] text-espresso-500">Partner dummy</p>
+              <h2 class="mt-2 font-display text-2xl text-espresso-950">Trusted by delivery & lifestyle platforms</h2>
+            </div>
+            <div class="hidden items-center gap-2 rounded-full bg-gold-50 px-4 py-2 text-sm font-medium text-espresso-700 md:inline-flex">
+              <i data-lucide="badge-check" class="h-4 w-4 text-gold-500"></i>
+              High-conversion social traffic ready
+            </div>
+          </div>
+          <div class="overflow-hidden rounded-2xl border border-espresso-100 bg-espresso-50/60 py-4">
+            <div class="partner-track flex animate-marquee gap-4 px-4">
+              <div class="rounded-full bg-white px-5 py-3 text-sm font-semibold text-espresso-700 shadow-soft">GOFOOD PARTNER</div>
+              <div class="rounded-full bg-white px-5 py-3 text-sm font-semibold text-espresso-700 shadow-soft">GRABFOOD SELECT</div>
+              <div class="rounded-full bg-white px-5 py-3 text-sm font-semibold text-espresso-700 shadow-soft">TIKTOK SHOP LIVE</div>
+              <div class="rounded-full bg-white px-5 py-3 text-sm font-semibold text-espresso-700 shadow-soft">OFFICE PANTRY PICK</div>
+              <div class="rounded-full bg-white px-5 py-3 text-sm font-semibold text-espresso-700 shadow-soft">COFFEE BREAK BOX</div>
+              <div class="rounded-full bg-white px-5 py-3 text-sm font-semibold text-espresso-700 shadow-soft">WEEKEND DESSERT CLUB</div>
+              <div class="rounded-full bg-white px-5 py-3 text-sm font-semibold text-espresso-700 shadow-soft">GOFOOD PARTNER</div>
+              <div class="rounded-full bg-white px-5 py-3 text-sm font-semibold text-espresso-700 shadow-soft">GRABFOOD SELECT</div>
+              <div class="rounded-full bg-white px-5 py-3 text-sm font-semibold text-espresso-700 shadow-soft">TIKTOK SHOP LIVE</div>
+              <div class="rounded-full bg-white px-5 py-3 text-sm font-semibold text-espresso-700 shadow-soft">OFFICE PANTRY PICK</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Keunggulan -->
+    <section id="keunggulan" class="section-pad bg-white/55">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl reveal">
+          <p class="text-sm font-semibold uppercase tracking-[0.24em] text-gold-500">Kenapa TiraLab</p>
+          <h2 class="mt-3 font-display text-3xl text-espresso-950 md:text-4xl">Dessert premium yang dibuat untuk feed cantik, rasa mewah, dan repeat order tinggi.</h2>
+          <p class="mt-4 text-base leading-7 text-espresso-700">Struktur landing page ini menonjolkan creamy visual, best seller highlight, dan flash sale vibe yang cocok untuk traffic dari TikTok Ads atau Instagram Reels.</p>
+        </div>
+
+        <div class="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          <article class="reveal card-premium p-6 transition hover:-translate-y-1 hover:shadow-premium">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-gold-100 text-gold-600">
+              <i data-lucide="chef-hat" class="h-6 w-6"></i>
+            </div>
+            <h3 class="mt-5 text-xl font-semibold text-espresso-950">Authentic mascarpone</h3>
+            <p class="mt-3 text-sm leading-6 text-espresso-600">Menggunakan 100% authentic mascarpone cheese, bukan whipped cream biasa, untuk rasa creamy yang clean.</p>
+          </article>
+          <article class="reveal card-premium p-6 transition hover:-translate-y-1 hover:shadow-premium">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-espresso-100 text-espresso-700">
+              <i data-lucide="coffee" class="h-6 w-6"></i>
+            </div>
+            <h3 class="mt-5 text-xl font-semibold text-espresso-950">Arabika pilihan</h3>
+            <p class="mt-3 text-sm leading-6 text-espresso-600">Rendaman espresso dari biji kopi Arabika pilihan menghadirkan aroma kuat tanpa rasa pahit berlebihan.</p>
+          </article>
+          <article class="reveal card-premium p-6 transition hover:-translate-y-1 hover:shadow-premium">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-50 text-amber-600">
+              <i data-lucide="droplets" class="h-6 w-6"></i>
+            </div>
+            <h3 class="mt-5 text-xl font-semibold text-espresso-950">Melt-in-your-mouth</h3>
+            <p class="mt-3 text-sm leading-6 text-espresso-600">Tekstur lembut dan lumer di mulut, cocok untuk dessert after lunch, office treat, atau hadiah kecil yang berkesan.</p>
+          </article>
+          <article class="reveal card-premium p-6 transition hover:-translate-y-1 hover:shadow-premium">
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-600">
+              <i data-lucide="leaf" class="h-6 w-6"></i>
+            </div>
+            <h3 class="mt-5 text-xl font-semibold text-espresso-950">Less sugar option</h3>
+            <p class="mt-3 text-sm leading-6 text-espresso-600">Tingkat kemanisan pas, dengan opsi less sugar untuk konsumen yang ingin tetap menikmati dessert secara balance.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Best Seller & Gallery -->
+    <section class="section-pad">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-6 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
+          <div class="reveal card-premium overflow-hidden p-6 md:p-8">
+            <div class="inline-flex items-center gap-2 rounded-full bg-gold-100 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-gold-600">
+              <i data-lucide="flame" class="h-4 w-4"></i>
+              Best Seller 2026
+            </div>
+            <h2 class="mt-5 font-display text-3xl text-espresso-950">Classic Italian Tiramisu jadi favorit untuk hadiah manis, self-reward, dan jam break kantor.</h2>
+            <p class="mt-4 text-base leading-7 text-espresso-700">Visual creamy, taburan cocoa yang tebal, dan lapisan espresso yang seimbang membuat varian ini paling aman untuk first-time buyer sekaligus paling cepat memicu repeat order.</p>
+            <div class="mt-6 grid grid-cols-2 gap-3">
+              <div class="rounded-2xl bg-espresso-50 p-4">
+                <p class="text-xs uppercase tracking-[0.24em] text-espresso-500">Personal Box</p>
+                <p class="mt-2 text-2xl font-bold text-espresso-950">Rp 45.000</p>
+              </div>
+              <div class="rounded-2xl bg-espresso-50 p-4">
+                <p class="text-xs uppercase tracking-[0.24em] text-espresso-500">Sharing Box</p>
+                <p class="mt-2 text-2xl font-bold text-espresso-950">Rp 85.000</p>
+              </div>
+            </div>
+          </div>
+          <div class="reveal grid gap-4 sm:grid-cols-2 gallery-grid">
+            <img src="2.png" alt="Dummy gallery tiramisu 1" width="600" height="720" class="h-full min-h-[240px] rounded-[2rem] shadow-soft">
+            <img src="3.png" alt="Dummy gallery tiramisu 2" width="600" height="520" class="h-full min-h-[240px] rounded-[2rem] shadow-soft sm:mt-10">
+            <img src="4.png" alt="Dummy gallery tiramisu 3" width="600" height="520" class="h-full min-h-[240px] rounded-[2rem] shadow-soft">
+            <img src="5.png" alt="Dummy gallery tiramisu 4" width="600" height="720" class="h-full min-h-[240px] rounded-[2rem] shadow-soft sm:-mt-10">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu -->
+    <section id="menu" class="section-pad bg-white/60">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div class="max-w-2xl reveal">
+            <p class="text-sm font-semibold uppercase tracking-[0.24em] text-gold-500">Menu signature</p>
+            <h2 class="mt-3 font-display text-3xl text-espresso-950 md:text-4xl">Pilih varian tiramisu yang paling cocok dengan mood dan craving hari ini.</h2>
+          </div>
+          <div class="reveal rounded-2xl bg-gold-50 px-5 py-4 text-sm text-espresso-700 shadow-soft">
+            <p class="font-semibold text-espresso-900">Format harga</p>
+            <p class="mt-1">Personal Box (200ml) Rp 45.000 • Sharing Box (500ml) Rp 85.000</p>
+          </div>
+        </div>
+
+        <div class="mt-10 grid gap-5 lg:grid-cols-3">
+          <article class="menu-card reveal group card-premium overflow-hidden transition hover:-translate-y-2 hover:shadow-premium">
+            <div class="relative overflow-hidden p-3">
+              <span class="absolute left-6 top-6 z-10 rounded-full bg-white/90 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-espresso-800">Original Recipe</span>
+              <img src="6.png" alt="Dummy Classic Italian Tiramisu" width="700" height="760" class="h-72 w-full rounded-[1.4rem] transition duration-500 group-hover:scale-105">
+            </div>
+            <div class="px-6 pb-6">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <h3 class="text-2xl font-semibold text-espresso-950">Classic Italian Tiramisu</h3>
+                  <p class="mt-2 text-sm leading-6 text-espresso-600">Original recipe dengan espresso yang bold, mascarpone creamy, dan cocoa finish yang klasik.</p>
+                </div>
+                <span class="rounded-full bg-gold-50 px-3 py-1 text-xs font-semibold text-gold-600">Best Seller</span>
+              </div>
+              <div class="mt-5 flex items-center justify-between gap-3">
+                <div>
+                  <p class="text-xs uppercase tracking-[0.22em] text-espresso-500">Mulai dari</p>
+                  <p class="mt-1 text-2xl font-bold text-espresso-950">Rp 45.000</p>
+                </div>
+                <a href="https://wa.me/6281234567890?text=Halo%20TiraLab%2C%20saya%20ingin%20order%20Classic%20Italian%20Tiramisu." target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 items-center rounded-full bg-espresso-800 px-5 text-sm font-semibold text-white shadow-soft transition hover:bg-espresso-900">Order</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card reveal group card-premium overflow-hidden transition hover:-translate-y-2 hover:shadow-premium">
+            <div class="relative overflow-hidden p-3">
+              <span class="absolute left-6 top-6 z-10 rounded-full bg-white/90 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-espresso-800">Crunchy Favorite</span>
+              <img src="7.png" alt="Dummy Lotus Biscoff Tiramisu" width="700" height="760" class="h-72 w-full rounded-[1.4rem] transition duration-500 group-hover:scale-105">
+            </div>
+            <div class="px-6 pb-6">
+              <h3 class="text-2xl font-semibold text-espresso-950">Lotus Biscoff Tiramisu</h3>
+              <p class="mt-2 text-sm leading-6 text-espresso-600">Diperkaya Biscoff spread dan crunchy biscuit untuk tekstur yang playful dan sangat cocok untuk Gen Z.</p>
+              <div class="mt-5 flex items-center justify-between gap-3">
+                <div>
+                  <p class="text-xs uppercase tracking-[0.22em] text-espresso-500">Mulai dari</p>
+                  <p class="mt-1 text-2xl font-bold text-espresso-950">Rp 45.000</p>
+                </div>
+                <a href="https://wa.me/6281234567890?text=Halo%20TiraLab%2C%20saya%20ingin%20order%20Lotus%20Biscoff%20Tiramisu." target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 items-center rounded-full bg-espresso-800 px-5 text-sm font-semibold text-white shadow-soft transition hover:bg-espresso-900">Order</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card reveal group card-premium overflow-hidden transition hover:-translate-y-2 hover:shadow-premium">
+            <div class="relative overflow-hidden p-3">
+              <span class="absolute left-6 top-6 z-10 rounded-full bg-white/90 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-espresso-800">Premium Nutty</span>
+              <img src="8.png" alt="Dummy Pistachio Dream Tiramisu" width="700" height="760" class="h-72 w-full rounded-[1.4rem] transition duration-500 group-hover:scale-105">
+            </div>
+            <div class="px-6 pb-6">
+              <h3 class="text-2xl font-semibold text-espresso-950">Pistachio Dream Tiramisu</h3>
+              <p class="mt-2 text-sm leading-6 text-espresso-600">Varian premium dengan karakter nutty elegan, creamy finish, dan visual yang sangat aesthetic untuk konten.</p>
+              <div class="mt-5 flex items-center justify-between gap-3">
+                <div>
+                  <p class="text-xs uppercase tracking-[0.22em] text-espresso-500">Mulai dari</p>
+                  <p class="mt-1 text-2xl font-bold text-espresso-950">Rp 45.000</p>
+                </div>
+                <a href="https://wa.me/6281234567890?text=Halo%20TiraLab%2C%20saya%20ingin%20order%20Pistachio%20Dream%20Tiramisu." target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 items-center rounded-full bg-espresso-800 px-5 text-sm font-semibold text-white shadow-soft transition hover:bg-espresso-900">Order</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video -->
+    <section id="video" class="section-pad">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-6 lg:grid-cols-[1.1fr_.9fr] lg:items-center">
+          <div class="reveal">
+            <p class="text-sm font-semibold uppercase tracking-[0.24em] text-gold-500">TikTok style content block</p>
+            <h2 class="mt-3 font-display text-3xl text-espresso-950 md:text-4xl">Konten yang didesain untuk traffic cepat, visual menggoda, dan conversion intent tinggi.</h2>
+            <p class="mt-4 max-w-2xl text-base leading-7 text-espresso-700">Section ini meniru preview video vertikal ala TikTok dengan autoplay muted style dummy, cocok untuk menonjolkan texture shot, spoon pull, dan testimonial singkat tanpa backend.</p>
+            <div class="mt-6 grid gap-3 sm:grid-cols-2">
+              <div class="rounded-2xl bg-white p-4 shadow-soft">
+                <p class="text-sm font-semibold text-espresso-900">Content hook</p>
+                <p class="mt-2 text-sm text-espresso-600">&quot;Dessert box yang bikin coffee break naik kelas dalam 1 suapan.&quot;</p>
+              </div>
+              <div class="rounded-2xl bg-white p-4 shadow-soft">
+                <p class="text-sm font-semibold text-espresso-900">Video angle</p>
+                <p class="mt-2 text-sm text-espresso-600">Spoon dip, creamy pull, cocoa dusting, dan reaction shot pelanggan.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal grid gap-4 sm:grid-cols-2">
+            <div class="tiktok-frame relative overflow-hidden rounded-[2rem] bg-black p-3 shadow-premium">
+              <img src="9.png" alt="Dummy preview video testimonial tiramisu" width="600" height="980" class="aspect-[9/16] w-full rounded-[1.5rem] object-cover opacity-90">
+              <div class="absolute inset-x-6 bottom-6 z-10">
+                <div class="video-bars mb-4 flex h-7 items-end gap-1">
+                  <span class="w-1.5 h-4"></span>
+                  <span class="w-1.5 h-7"></span>
+                  <span class="w-1.5 h-5"></span>
+                  <span class="w-1.5 h-6"></span>
+                  <span class="w-1.5 h-3"></span>
+                </div>
+                <p class="text-sm font-semibold text-white">@tiramisulab_id</p>
+                <p class="mt-1 text-xs text-white/80">Preview video testimonial • autoplay muted dummy</p>
+              </div>
+            </div>
+            <div class="tiktok-frame relative overflow-hidden rounded-[2rem] bg-black p-3 shadow-premium sm:mt-10">
+              <img src="10.png" alt="Dummy preview video spoon pull tiramisu" width="600" height="980" class="aspect-[9/16] w-full rounded-[1.5rem] object-cover opacity-90">
+              <div class="absolute right-5 top-6 z-10 flex flex-col items-center gap-4 text-white">
+                <button class="rounded-full bg-white/15 p-3 backdrop-blur" aria-label="Like preview">
+                  <i data-lucide="heart" class="h-5 w-5"></i>
+                </button>
+                <button class="rounded-full bg-white/15 p-3 backdrop-blur" aria-label="Comment preview">
+                  <i data-lucide="message-circle" class="h-5 w-5"></i>
+                </button>
+                <button class="rounded-full bg-white/15 p-3 backdrop-blur" aria-label="Share preview">
+                  <i data-lucide="send" class="h-5 w-5"></i>
+                </button>
+              </div>
+              <div class="absolute inset-x-6 bottom-6 z-10">
+                <p class="text-sm font-semibold text-white">Melt-in-your-mouth texture</p>
+                <p class="mt-1 text-xs text-white/80">Preview konten spoon dip dan creamy layer.</p>
               </div>
             </div>
           </div>
@@ -249,441 +645,437 @@
       </div>
     </section>
 
-    <section id="keunggulan" class="section-fade mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-      <div class="max-w-2xl">
-        <span class="inline-flex rounded-full bg-orange-100 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-orange-700 dark:bg-orange-400/10 dark:text-orange-200">Kenapa banyak yang repeat order?</span>
-        <h2 class="mt-4 font-display text-3xl font-semibold tracking-tight sm:text-4xl">Bukan sekadar frozen food, tapi stok praktis yang tetap terasa spesial.</h2>
-        <p class="mt-4 text-slate-600 dark:text-slate-300">Copywriting, visual, dan struktur dibuat untuk menegaskan rasa premium, kemudahan order, serta potensi cuan bagi reseller dan UMKM.</p>
-      </div>
-      <div id="advantagesGrid" class="mt-10 grid grid-auto gap-5"></div>
-    </section>
-
-    <section id="produk" class="section-fade bg-white/70 py-16 dark:bg-white/[0.03] lg:py-24">
+    <!-- Promo -->
+    <section id="promo" class="section-pad">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
-          <div class="max-w-2xl">
-            <span class="inline-flex rounded-full bg-red-100 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-red-700 dark:bg-red-400/10 dark:text-red-200">Menu favorit</span>
-            <h2 class="mt-4 font-display text-3xl font-semibold tracking-tight sm:text-4xl">Varian yang bikin pelanggan mudah checkout.</h2>
-            <p class="mt-4 text-slate-600 dark:text-slate-300">Setiap produk punya deskripsi singkat yang menonjolkan manfaat, rasa, dan momen konsumsi—lebih mudah memicu pembelian impulsif maupun order grosir.</p>
-          </div>
-          <a href="#promo" class="inline-flex min-h-[48px] items-center justify-center rounded-full border border-slate-300 px-5 py-3 text-sm font-bold text-slate-700 transition hover:border-orange-300 hover:text-accent-600 dark:border-white/10 dark:text-slate-100">Lihat promo aktif</a>
-        </div>
-        <div id="productsGrid" class="mt-10 grid grid-products gap-6"></div>
-      </div>
-    </section>
+        <div class="reveal relative overflow-hidden rounded-[2rem] bg-promo-gradient p-6 text-white shadow-premium md:p-10">
+          <div class="absolute -right-10 top-0 h-40 w-40 rounded-full bg-gold-300/20 blur-3xl"></div>
+          <div class="absolute -left-10 bottom-0 h-40 w-40 rounded-full bg-white/10 blur-3xl"></div>
+          <div class="relative grid gap-8 lg:grid-cols-[1.15fr_.85fr] lg:items-center">
+            <div>
+              <div class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em]">
+                <i data-lucide="clock-3" class="h-4 w-4"></i>
+                Flash Promo • Limited Stock Dummy
+              </div>
+              <h2 class="mt-5 font-display text-3xl md:text-5xl">Beli 2 Personal Box, Gratis 1 Ice Americano.</h2>
+              <p class="mt-4 max-w-2xl text-base leading-7 text-white/80">Khusus takeaway & delivery. Cocok untuk mendorong order cepat dari traffic iklan karena value-nya langsung jelas, mudah dipahami, dan relevan untuk office break atau sweet surprise.</p>
+              <div class="mt-6 flex flex-wrap gap-3">
+                <div class="rounded-2xl bg-white/10 px-4 py-3 backdrop-blur-sm">
+                  <p class="text-xs uppercase tracking-[0.22em] text-white/60">Dummy stock</p>
+                  <p class="mt-2 text-xl font-bold">Tersisa 27 bundle</p>
+                </div>
+                <div class="rounded-2xl bg-white/10 px-4 py-3 backdrop-blur-sm">
+                  <p class="text-xs uppercase tracking-[0.22em] text-white/60">Pickup favorit</p>
+                  <p class="mt-2 text-xl font-bold">Jam 16.00 - 19.00</p>
+                </div>
+              </div>
+            </div>
 
-    <section id="cara-order" class="section-fade mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-      <div class="max-w-2xl">
-        <span class="inline-flex rounded-full bg-orange-100 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-orange-700 dark:bg-orange-400/10 dark:text-orange-200">Cara order</span>
-        <h2 class="mt-4 font-display text-3xl font-semibold tracking-tight sm:text-4xl">Order cepat tanpa ribet, cocok untuk pelanggan sibuk.</h2>
-      </div>
-      <div id="orderSteps" class="mt-10 grid gap-5 lg:grid-cols-4"></div>
-    </section>
-
-    <section id="testimoni" class="section-fade overflow-hidden bg-gradient-to-br from-red-50 via-orange-50 to-white py-16 dark:from-[#241410] dark:via-[#18120f] dark:to-[#120d0b] lg:py-24">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="max-w-2xl">
-          <span class="inline-flex rounded-full bg-white px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-accent-600 shadow-soft dark:bg-white/5 dark:text-orange-200">Testimoni pelanggan</span>
-          <h2 class="mt-4 font-display text-3xl font-semibold tracking-tight sm:text-4xl">Ulasan yang memperkuat kepercayaan sebelum orang chat.</h2>
-          <p class="mt-4 text-slate-600 dark:text-slate-300">Slider ini dirancang ringan tanpa library tambahan agar tetap cepat di-hosting di Netlify.</p>
-        </div>
-        <div class="relative mt-10 overflow-hidden rounded-[2rem] border border-black/5 bg-white/80 p-4 shadow-card dark:border-white/10 dark:bg-white/5 sm:p-6">
-          <div id="testimonialTrack" class="testimonial-track flex"></div>
-          <div class="mt-6 flex items-center justify-between gap-4">
-            <div id="testimonialDots" class="flex items-center gap-2"></div>
-            <div class="flex items-center gap-3">
-              <button id="prevTestimonial" class="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white text-slate-800 hover:border-orange-300 hover:text-accent-600 dark:border-white/10 dark:bg-white/5 dark:text-white" aria-label="Testimoni sebelumnya">&#8592;</button>
-              <button id="nextTestimonial" class="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-white text-slate-800 hover:border-orange-300 hover:text-accent-600 dark:border-white/10 dark:bg-white/5 dark:text-white" aria-label="Testimoni berikutnya">&#8594;</button>
+            <div class="glass rounded-[1.8rem] p-6 text-espresso-950 shadow-float">
+              <p class="text-sm font-semibold uppercase tracking-[0.24em] text-espresso-500">Promo berakhir dalam</p>
+              <div class="mt-5 grid grid-cols-4 gap-3 text-center">
+                <div class="rounded-2xl bg-white/80 p-4">
+                  <p id="days" class="text-3xl font-bold text-espresso-950">00</p>
+                  <p class="mt-1 text-xs uppercase tracking-[0.2em] text-espresso-500">Hari</p>
+                </div>
+                <div class="rounded-2xl bg-white/80 p-4">
+                  <p id="hours" class="text-3xl font-bold text-espresso-950">00</p>
+                  <p class="mt-1 text-xs uppercase tracking-[0.2em] text-espresso-500">Jam</p>
+                </div>
+                <div class="rounded-2xl bg-white/80 p-4">
+                  <p id="minutes" class="text-3xl font-bold text-espresso-950">00</p>
+                  <p class="mt-1 text-xs uppercase tracking-[0.2em] text-espresso-500">Menit</p>
+                </div>
+                <div class="rounded-2xl bg-white/80 p-4">
+                  <p id="seconds" class="text-3xl font-bold text-espresso-950">00</p>
+                  <p class="mt-1 text-xs uppercase tracking-[0.2em] text-espresso-500">Detik</p>
+                </div>
+              </div>
+              <a href="https://wa.me/6281234567890?text=Halo%20TiraLab%2C%20saya%20ingin%20klaim%20promo%202%20Personal%20Box%20gratis%201%20Ice%20Americano." target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-espresso-900 px-6 text-sm font-semibold text-white transition hover:bg-black">Klaim Promo Sekarang</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="promo" class="section-fade mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-      <div class="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-accent-600 via-red-500 to-brand-500 p-8 text-white shadow-glow sm:p-10 lg:p-14">
-        <div class="noise absolute inset-0 opacity-40"></div>
-        <div class="relative z-10 grid gap-8 lg:grid-cols-[1.1fr_.9fr] lg:items-center">
-          <div>
-            <span class="inline-flex rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em]">Promo panas bulan ini</span>
-            <h2 class="mt-4 max-w-2xl font-display text-3xl font-semibold tracking-tight sm:text-4xl">Paket promo yang mendorong order lebih besar dalam satu chat.</h2>
-            <p class="mt-4 max-w-2xl text-white/85">Naikkan AOV dengan penawaran yang jelas: reseller lebih untung, keluarga lebih hemat, pelanggan baru lebih cepat ambil keputusan.</p>
+    <!-- Testimoni -->
+    <section id="testimoni" class="section-pad bg-white/60">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <div class="max-w-2xl reveal">
+            <p class="text-sm font-semibold uppercase tracking-[0.24em] text-gold-500">Ulasan pelanggan</p>
+            <h2 class="mt-3 font-display text-3xl text-espresso-950 md:text-4xl">Review yang membantu visitor yakin lebih cepat sebelum klik WhatsApp.</h2>
           </div>
-          <div class="grid gap-4 sm:grid-cols-2" id="promoGrid"></div>
+          <div class="reveal flex items-center gap-2">
+            <button id="prevTestimonial" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-espresso-200 bg-white text-espresso-900 shadow-soft" aria-label="Testimoni sebelumnya">
+              <i data-lucide="chevron-left" class="h-5 w-5"></i>
+            </button>
+            <button id="nextTestimonial" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-espresso-200 bg-white text-espresso-900 shadow-soft" aria-label="Testimoni berikutnya">
+              <i data-lucide="chevron-right" class="h-5 w-5"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="mt-10 overflow-hidden">
+          <div id="testimonialTrack" class="flex transition-transform duration-500 ease-out">
+            <article class="w-full shrink-0 px-1 md:w-1/3">
+              <div class="card-premium h-full p-6">
+                <div class="flex items-center gap-4">
+                  <img src="https://i.pravatar.cc/96?img=32" alt="Avatar testimonial 1" width="64" height="64" class="testimonial-avatar h-16 w-16 rounded-2xl">
+                  <div>
+                    <h3 class="font-semibold text-espresso-950">Nadya, 27</h3>
+                    <p class="text-sm text-espresso-500">Content creator</p>
+                  </div>
+                </div>
+                <div class="mt-5 flex gap-1 text-gold-400"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="mt-4 text-sm leading-7 text-espresso-700">&quot;Creamy-nya berasa mahal, espresso-nya clean, dan visualnya cakep banget buat konten. Classic-nya aman banget buat first order.&quot;</p>
+              </div>
+            </article>
+            <article class="w-full shrink-0 px-1 md:w-1/3">
+              <div class="card-premium h-full p-6">
+                <div class="flex items-center gap-4">
+                  <img src="https://i.pravatar.cc/96?img=44" alt="Avatar testimonial 2" width="64" height="64" class="testimonial-avatar h-16 w-16 rounded-2xl">
+                  <div>
+                    <h3 class="font-semibold text-espresso-950">Raka, 31</h3>
+                    <p class="text-sm text-espresso-500">UI designer</p>
+                  </div>
+                </div>
+                <div class="mt-5 flex gap-1 text-gold-400"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="mt-4 text-sm leading-7 text-espresso-700">&quot;Lotus Biscoff-nya balance, nggak terlalu manis. Cocok buat nemenin kerja sore dan bikin pengen repeat order buat tim kantor.&quot;</p>
+              </div>
+            </article>
+            <article class="w-full shrink-0 px-1 md:w-1/3">
+              <div class="card-premium h-full p-6">
+                <div class="flex items-center gap-4">
+                  <img src="https://i.pravatar.cc/96?img=17" alt="Avatar testimonial 3" width="64" height="64" class="testimonial-avatar h-16 w-16 rounded-2xl">
+                  <div>
+                    <h3 class="font-semibold text-espresso-950">Maya, 25</h3>
+                    <p class="text-sm text-espresso-500">Marketing executive</p>
+                  </div>
+                </div>
+                <div class="mt-5 flex gap-1 text-gold-400"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="mt-4 text-sm leading-7 text-espresso-700">&quot;Pistachio Dream punya kesan premium banget. Packaging dummy landing page ini juga bikin brand terasa lebih serius dan meyakinkan.&quot;</p>
+              </div>
+            </article>
+            <article class="w-full shrink-0 px-1 md:w-1/3">
+              <div class="card-premium h-full p-6">
+                <div class="flex items-center gap-4">
+                  <img src="https://i.pravatar.cc/96?img=52" alt="Avatar testimonial 4" width="64" height="64" class="testimonial-avatar h-16 w-16 rounded-2xl">
+                  <div>
+                    <h3 class="font-semibold text-espresso-950">Dimas, 29</h3>
+                    <p class="text-sm text-espresso-500">Startup operator</p>
+                  </div>
+                </div>
+                <div class="mt-5 flex gap-1 text-gold-400"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="mt-4 text-sm leading-7 text-espresso-700">&quot;Saya suka karena ada opsi less sugar. Rasanya tetap indulgent tapi tidak bikin enek, cocok buat daily treat.&quot;</p>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="faq" class="section-fade bg-white/70 py-16 dark:bg-white/[0.03] lg:py-24">
-      <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[.85fr_1.15fr] lg:px-8">
-        <div>
-          <span class="inline-flex rounded-full bg-orange-100 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-orange-700 dark:bg-orange-400/10 dark:text-orange-200">FAQ</span>
-          <h2 class="mt-4 font-display text-3xl font-semibold tracking-tight sm:text-4xl">Jawaban cepat yang mengurangi keraguan pelanggan.</h2>
-          <p class="mt-4 text-slate-600 dark:text-slate-300">Accordion dibuat interaktif, ringan, dan mudah dikembangkan jika nanti ingin dihubungkan ke CMS atau Google Sheets API.</p>
+    <!-- FAQ -->
+    <section id="faq" class="section-pad">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center reveal">
+          <p class="text-sm font-semibold uppercase tracking-[0.24em] text-gold-500">FAQ</p>
+          <h2 class="mt-3 font-display text-3xl text-espresso-950 md:text-4xl">Pertanyaan yang sering ditanyakan sebelum checkout.</h2>
         </div>
-        <div id="faqList" class="space-y-4"></div>
+
+        <div class="mt-10 space-y-4">
+          <article class="faq-item reveal card-premium overflow-hidden">
+            <button class="faq-trigger flex w-full items-center justify-between gap-4 px-6 py-5 text-left" aria-expanded="false">
+              <div>
+                <h3 class="text-lg font-semibold text-espresso-950">Apakah tiramisu dibuat fresh setiap hari?</h3>
+                <p class="mt-1 text-sm text-espresso-500">Ya, seluruh batch menggunakan data dummy fresh daily positioning.</p>
+              </div>
+              <i data-lucide="plus" class="faq-icon h-5 w-5 shrink-0 text-espresso-600"></i>
+            </button>
+            <div class="faq-content px-6"><div><p class="pb-5 text-sm leading-7 text-espresso-700">TiraLab diposisikan sebagai dessert premium yang dibuat fresh setiap hari agar tekstur creamy, aroma espresso, dan kualitas mascarpone tetap optimal saat sampai ke pelanggan.</p></div></div>
+          </article>
+          <article class="faq-item reveal card-premium overflow-hidden">
+            <button class="faq-trigger flex w-full items-center justify-between gap-4 px-6 py-5 text-left" aria-expanded="false">
+              <div>
+                <h3 class="text-lg font-semibold text-espresso-950">Apakah tersedia opsi less sugar?</h3>
+                <p class="mt-1 text-sm text-espresso-500">Tersedia untuk konsumen yang ingin rasa lebih seimbang.</p>
+              </div>
+              <i data-lucide="plus" class="faq-icon h-5 w-5 shrink-0 text-espresso-600"></i>
+            </button>
+            <div class="faq-content px-6"><div><p class="pb-5 text-sm leading-7 text-espresso-700">Ya, landing page ini sudah menonjolkan less sugar option agar sesuai dengan kebutuhan audiens urban yang tetap ingin dessert nyaman dinikmati untuk coffee break atau after lunch.</p></div></div>
+          </article>
+          <article class="faq-item reveal card-premium overflow-hidden">
+            <button class="faq-trigger flex w-full items-center justify-between gap-4 px-6 py-5 text-left" aria-expanded="false">
+              <div>
+                <h3 class="text-lg font-semibold text-espresso-950">Ukuran box apa yang tersedia?</h3>
+                <p class="mt-1 text-sm text-espresso-500">Personal untuk individual, sharing untuk dinikmati bersama.</p>
+              </div>
+              <i data-lucide="plus" class="faq-icon h-5 w-5 shrink-0 text-espresso-600"></i>
+            </button>
+            <div class="faq-content px-6"><div><p class="pb-5 text-sm leading-7 text-espresso-700">Tersedia Personal Box 200ml seharga Rp 45.000 dan Sharing Box 500ml seharga Rp 85.000, sehingga mudah dipakai untuk pembelian personal maupun bundling hadiah.</p></div></div>
+          </article>
+          <article class="faq-item reveal card-premium overflow-hidden">
+            <button class="faq-trigger flex w-full items-center justify-between gap-4 px-6 py-5 text-left" aria-expanded="false">
+              <div>
+                <h3 class="text-lg font-semibold text-espresso-950">Bagaimana cara order paling cepat?</h3>
+                <p class="mt-1 text-sm text-espresso-500">Klik tombol WhatsApp di hero, menu, promo, atau CTA akhir.</p>
+              </div>
+              <i data-lucide="plus" class="faq-icon h-5 w-5 shrink-0 text-espresso-600"></i>
+            </button>
+            <div class="faq-content px-6"><div><p class="pb-5 text-sm leading-7 text-espresso-700">Semua tombol utama diarahkan ke WhatsApp agar alur konversi singkat, terutama untuk traffic mobile dari TikTok Ads yang membutuhkan CTA cepat dan jelas.</p></div></div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section-fade mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-      <div class="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center rounded-[2rem] border border-black/5 bg-gradient-to-r from-orange-50 via-white to-red-50 p-8 shadow-card dark:border-white/10 dark:from-[#241814] dark:via-[#18120f] dark:to-[#261411] sm:p-10">
-        <div>
-          <span class="inline-flex rounded-full bg-white px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-accent-600 shadow-soft dark:bg-white/5 dark:text-orange-200">Saatnya checkout</span>
-          <h2 class="mt-4 font-display text-3xl font-semibold tracking-tight sm:text-4xl">Yuk Stok Dimsum Frozen Favoritmu Sekarang!</h2>
-          <p class="mt-4 max-w-2xl text-slate-600 dark:text-slate-300">Cocok untuk stok rumah, ide jualan, bekal anak, atau menu cepat saat lapar datang. Chat sekarang sebelum promo hari ini berakhir.</p>
+    <!-- Final CTA -->
+    <section class="section-pad pb-20">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal overflow-hidden rounded-[2rem] border border-gold-200 bg-gradient-to-br from-gold-50 via-white to-espresso-50 p-8 shadow-premium md:p-10">
+          <div class="grid gap-6 lg:grid-cols-[1.1fr_.9fr] lg:items-center">
+            <div>
+              <p class="text-sm font-semibold uppercase tracking-[0.24em] text-gold-600">Closing CTA</p>
+              <h2 class="mt-3 font-display text-3xl text-espresso-950 md:text-5xl">Siap kirim dessert box premium untuk mood booster, hadiah kecil, atau teman ngopi sore.</h2>
+              <p class="mt-4 max-w-2xl text-base leading-7 text-espresso-700">Klik WhatsApp sekarang untuk cek varian, klaim bonus promo, dan amankan batch fresh hari ini sebelum slot dummy delivery habis.</p>
+            </div>
+            <div class="rounded-[1.8rem] bg-white/85 p-6 shadow-soft">
+              <div class="space-y-3">
+                <div class="flex items-center gap-3 rounded-2xl bg-espresso-50 p-4">
+                  <div class="flex h-11 w-11 items-center justify-center rounded-full bg-gold-100 text-gold-600"><i data-lucide="gift" class="h-5 w-5"></i></div>
+                  <div>
+                    <p class="text-sm font-semibold text-espresso-900">Bonus promo</p>
+                    <p class="text-sm text-espresso-600">2 Personal Box + Gratis 1 Ice Americano</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3 rounded-2xl bg-espresso-50 p-4">
+                  <div class="flex h-11 w-11 items-center justify-center rounded-full bg-emerald-100 text-emerald-600"><i data-lucide="truck" class="h-5 w-5"></i></div>
+                  <div>
+                    <p class="text-sm font-semibold text-espresso-900">Channel order</p>
+                    <p class="text-sm text-espresso-600">WhatsApp, takeaway, dan delivery</p>
+                  </div>
+                </div>
+              </div>
+              <a href="https://wa.me/6281234567890?text=Halo%20TiraLab%2C%20saya%20siap%20order%20The%20Ultimate%20Tiramisu%20Series." target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-espresso-800 px-6 text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-espresso-900">
+                <i class="fa-brands fa-whatsapp mr-2 text-lg"></i>
+                Pesan Sekarang via WhatsApp
+              </a>
+            </div>
+          </div>
         </div>
-        <a id="closingWaBtn" href="#" class="btn-lift animate-pulseRing inline-flex min-h-[58px] items-center justify-center rounded-full bg-accent-500 px-8 py-4 text-base font-black text-white shadow-soft hover:bg-accent-600">Pesan via WhatsApp</a>
       </div>
     </section>
   </main>
 
-  <footer class="border-t border-black/5 bg-[#fff5ef] py-12 dark:border-white/10 dark:bg-[#120d0b]">
-    <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.15fr_.85fr_.85fr] lg:px-8">
+  <!-- Footer -->
+  <footer class="border-t border-espresso-200/70 bg-espresso-950 text-white">
+    <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.1fr_.7fr_.7fr] lg:px-8">
       <div>
         <div class="flex items-center gap-3">
-          <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-accent-500 to-brand-500 text-white shadow-soft">
-            <svg viewBox="0 0 48 48" class="h-6 w-6" fill="none" aria-hidden="true">
-              <path d="M11 27c0-8 6.2-14 13-14s13 6 13 14c0 5.5-4.5 10-10 10H21c-5.5 0-10-4.5-10-10Z" stroke="currentColor" stroke-width="2.8"/>
-              <path d="M16 23c2-3 4.8-4.5 8-4.5 3.1 0 6 1.5 8 4.5" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/>
-              <path d="M18 28h12" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/>
+          <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-gold-200">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 16.5C5 12.91 7.91 10 11.5 10H17V16.5C17 18.99 14.99 21 12.5 21H9.5C7.01 21 5 18.99 5 16.5Z" fill="currentColor" opacity="0.95"/>
+              <path d="M8 10C8 6.69 10.69 4 14 4H18.25C19.22 4 20 4.78 20 5.75C20 8.1 18.1 10 15.75 10H8Z" stroke="currentColor" stroke-width="1.5"/>
             </svg>
-          </span>
+          </div>
           <div>
-            <p class="font-display text-xl font-semibold tracking-tight">Dimsumku Premium</p>
-            <p class="text-sm text-slate-600 dark:text-slate-300">Lezat, praktis, dan siap jadi repeat order.</p>
+            <p class="font-display text-2xl">Tiramisu Lab</p>
+            <p class="text-sm text-white/60">A Little Slice of Italy in Every Box</p>
           </div>
         </div>
-        <p class="mt-5 max-w-md text-sm leading-7 text-slate-600 dark:text-slate-300">Landing page ini dibuat dengan struktur kode yang mudah dikembangkan untuk brand frozen food, reseller, dan UMKM kuliner yang ingin meningkatkan konversi lewat WhatsApp.</p>
+        <p class="mt-5 max-w-md text-sm leading-7 text-white/70">Dessert box premium dengan nuansa creamy espresso, positioning modern, dan alur CTA yang dibuat khusus untuk penjualan produk kuliner era 2026.</p>
       </div>
+
       <div>
-        <h3 class="text-sm font-black uppercase tracking-[0.16em] text-slate-900 dark:text-white">Info usaha</h3>
-        <ul class="mt-4 space-y-3 text-sm text-slate-600 dark:text-slate-300">
-          <li>Alamat: Jl. Contoh Kuliner No. 88, Kota Anda</li>
-          <li>WhatsApp: <a id="footerWaBtn" href="#" class="font-bold text-accent-600">+62 812-3456-7890</a></li>
-          <li>Jam operasional: Senin - Sabtu, 08.00 - 20.00</li>
-          <li>Area pengiriman: Kota & sekitar, ekspedisi frozen sesuai kebutuhan</li>
-        </ul>
+        <p class="text-sm font-semibold uppercase tracking-[0.24em] text-white/60">Quick links</p>
+        <div class="mt-5 flex flex-col gap-3 text-sm text-white/80">
+          <a href="#hero" class="hover:text-white">Home</a>
+          <a href="#menu" class="hover:text-white">Menu</a>
+          <a href="#promo" class="hover:text-white">Promo</a>
+          <a href="#faq" class="hover:text-white">FAQ</a>
+        </div>
       </div>
+
       <div>
-        <h3 class="text-sm font-black uppercase tracking-[0.16em] text-slate-900 dark:text-white">Media sosial</h3>
-        <div class="mt-4 flex flex-wrap gap-3">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="rounded-full border border-black/10 px-4 py-2 text-sm font-medium hover:border-orange-300 hover:text-accent-600 dark:border-white/10">Instagram</a>
-          <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" class="rounded-full border border-black/10 px-4 py-2 text-sm font-medium hover:border-orange-300 hover:text-accent-600 dark:border-white/10">TikTok</a>
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="rounded-full border border-black/10 px-4 py-2 text-sm font-medium hover:border-orange-300 hover:text-accent-600 dark:border-white/10">Facebook</a>
+        <p class="text-sm font-semibold uppercase tracking-[0.24em] text-white/60">Social media</p>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a href="https://instagram.com/tiramisulab.official" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 items-center gap-2 rounded-full bg-white/10 px-4 text-sm font-medium text-white/90 transition hover:bg-white/20"><i class="fa-brands fa-instagram"></i>Instagram</a>
+          <a href="https://tiktok.com/@tiramisulab_id" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 items-center gap-2 rounded-full bg-white/10 px-4 text-sm font-medium text-white/90 transition hover:bg-white/20"><i class="fa-brands fa-tiktok"></i>TikTok</a>
+          <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 items-center gap-2 rounded-full bg-white/10 px-4 text-sm font-medium text-white/90 transition hover:bg-white/20"><i class="fa-brands fa-whatsapp"></i>WhatsApp</a>
         </div>
       </div>
     </div>
+    <div class="border-t border-white/10 px-4 py-5 text-center text-sm text-white/55">© 2026 Tiramisu Lab (TiraLab). All rights reserved. Built with HTML, Tailwind CSS, and Vanilla JavaScript.</div>
   </footer>
 
-  <a id="floatingWaBtn" href="#" class="fixed bottom-5 right-5 z-50 inline-flex min-h-[58px] items-center gap-3 rounded-full bg-[#25D366] px-5 py-3 text-sm font-black text-white shadow-2xl transition hover:-translate-y-1 hover:bg-[#1fb85a]" aria-label="Chat via WhatsApp">
-    <svg viewBox="0 0 32 32" class="h-5 w-5 fill-current" aria-hidden="true"><path d="M19.11 17.2c-.28-.14-1.65-.81-1.91-.9-.26-.1-.45-.14-.64.14-.19.28-.73.9-.9 1.08-.16.19-.33.21-.61.07-.28-.14-1.17-.43-2.23-1.36-.82-.73-1.38-1.62-1.54-1.89-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.64-1.55-.88-2.12-.23-.55-.47-.47-.64-.48l-.54-.01c-.19 0-.49.07-.75.35s-.98.96-.98 2.33.99 2.69 1.13 2.88c.14.19 1.95 2.97 4.73 4.16.66.28 1.18.45 1.58.58.66.21 1.26.18 1.73.11.53-.08 1.65-.67 1.89-1.32.23-.66.23-1.22.16-1.33-.07-.12-.26-.19-.54-.33Z"></path><path d="M27.12 4.85A15.82 15.82 0 0 0 16.02.01C7.3.01.2 7.12.2 15.85c0 2.78.73 5.49 2.1 7.87L0 32l8.49-2.22a15.8 15.8 0 0 0 7.52 1.92h.01c8.72 0 15.82-7.11 15.82-15.84 0-4.23-1.65-8.2-4.72-11.01ZM16.02 29.03h-.01a13.1 13.1 0 0 1-6.68-1.83l-.48-.28-5.04 1.32 1.35-4.92-.31-.5a13.13 13.13 0 0 1-2.02-6.98c0-7.24 5.9-13.14 13.17-13.14 3.51 0 6.82 1.36 9.3 3.85a13.04 13.04 0 0 1 3.87 9.3c0 7.25-5.9 13.16-13.15 13.16Z"></path></svg>
-    WhatsApp
-  </a>
-
   <script>
-    const brandConfig = {
-      brandName: 'Dimsumku Premium',
-      whatsappNumber: '6281234567890',
-      city: 'Kota Anda',
-      defaultMessage: 'Halo Dimsumku Premium, saya tertarik pesan dimsum frozen. Mohon info menu, harga, dan promo hari ini ya.'
-    };
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) lucide.createIcons();
 
-    const advantages = [
-      { icon: 'sparkles', title: 'Rasa premium restoran', desc: 'Isi padat, bumbu terasa, dan tekstur tetap nikmat setelah dikukus.' },
-      { icon: 'chef-hat', title: 'Praktis tinggal kukus', desc: 'Solusi cepat untuk sarapan, camilan sore, atau stok darurat saat lapar.' },
-      { icon: 'store', title: 'Cocok untuk reseller', desc: 'Margin menarik, varian mudah dijual, dan copy menu siap pakai.' },
-      { icon: 'wallet', title: 'Harga terjangkau', desc: 'Terasa premium tanpa bikin pelanggan mikir terlalu lama untuk checkout.' },
-      { icon: 'snowflake', title: 'Pengiriman aman frozen', desc: 'Dikemas rapi untuk menjaga kualitas produk sampai tujuan.' },
-      { icon: 'utensils-crossed', title: 'Banyak varian rasa', desc: 'Pilihan lengkap untuk keluarga, anak kos, hingga pelaku usaha kuliner.' }
-    ];
-
-    const products = [
-      { name: 'Dimsum Ayam', desc: 'Lembut, juicy, dan jadi varian paling aman untuk repeat order.', price: 'Rp22.000', badge: 'Best Seller', image: '2-ayam.png', seed: 'ayam' },
-      { name: 'Dimsum Udang', desc: 'Aroma udang terasa, cocok untuk pelanggan yang suka rasa gurih segar.', price: 'Rp27.000', badge: 'Favorit', image: '3-campuran.png', seed: 'udang' },
-      { name: 'Dimsum Mozzarella', desc: 'Lumer, creamy, dan sangat menarik untuk pasar anak muda.', price: 'Rp29.000', badge: 'Promo', image: '4-reseller.png', seed: 'mozzarella' },
-      { name: 'Lumpia Frozen', desc: 'Renyah di luar, gurih di dalam, cocok untuk stok camilan keluarga.', price: 'Rp24.000', badge: 'Hemat', image: '5-fresh.png', seed: 'lumpia' },
-      { name: 'Hakau', desc: 'Kulit lembut dengan sensasi premium yang cocok untuk menu spesial.', price: 'Rp31.000', badge: 'Premium', image: '6-promo.png', seed: 'hakau' },
-      { name: 'Siomay Premium', desc: 'Isi padat dan rasa kaya, pas untuk rumah tangga maupun jual ulang.', price: 'Rp28.000', badge: 'Repeat Order', image: '7-cta.png', seed: 'siomay' }
-    ];
-
-    const steps = [
-      { step: '01', title: 'Pilih menu', desc: 'Lihat varian favorit dan tentukan produk yang paling cocok untuk kebutuhanmu.' },
-      { step: '02', title: 'Chat WhatsApp', desc: 'Klik tombol order, pesan otomatis langsung terisi supaya lebih cepat.' },
-      { step: '03', title: 'Pembayaran', desc: 'Admin konfirmasi total belanja, promo, dan ongkir sebelum proses kirim.' },
-      { step: '04', title: 'Produk dikirim', desc: 'Pesanan dikemas aman agar sampai dalam kondisi frozen dan siap simpan.' }
-    ];
-
-    const testimonials = [
-      { name: 'Nadia', city: 'Brebes', rating: 5, avatar: 'https://i.pravatar.cc/120?img=32', comment: 'Awalnya coba untuk stok rumah, ternyata anak-anak suka banget. Sekarang selalu ready di freezer karena tinggal kukus dan rasanya tetap enak.' },
-      { name: 'Rani', city: 'Tegal', rating: 5, avatar: 'https://i.pravatar.cc/120?img=5', comment: 'Saya reseller kecil-kecilan dan varian dimsum ayam paling cepat habis. Pelanggan bilang rasanya berkelas tapi harganya masih masuk.' },
-      { name: 'Dimas', city: 'Purwokerto', rating: 5, avatar: 'https://i.pravatar.cc/120?img=12', comment: 'Buat anak kos ini penyelamat. Tinggal kukus, sambal tambah dikit, langsung jadi makan malam yang bikin puas.' },
-      { name: 'Bu Siska', city: 'Cirebon', rating: 5, avatar: 'https://i.pravatar.cc/120?img=49', comment: 'Saya beli untuk jualan frozen dan repeat order terus. Admin cepat respon, packing rapi, dan promo reseller-nya membantu banget.' }
-    ];
-
-    const promos = [
-      { title: 'Diskon reseller', desc: 'Harga khusus untuk pembelian partai agar margin lebih sehat.' },
-      { title: 'Gratis ongkir area tertentu', desc: 'Cocok untuk dorong closing lebih cepat di area terdekat.' },
-      { title: 'Buy 5 Get 1', desc: 'Strategi bundling yang efektif untuk naikin jumlah item per transaksi.' },
-      { title: 'Paket hemat keluarga', desc: 'Kombinasi varian favorit untuk stok mingguan di rumah.' }
-    ];
-
-    const faqs = [
-      { q: 'Berapa tahan frozen?', a: 'Dalam freezer bersuhu stabil, produk bisa tahan sekitar 2–3 bulan. Semakin baik penyimpanan, semakin terjaga tekstur dan rasanya.' },
-      { q: 'Cara penyimpanan?', a: 'Simpan dalam freezer setelah diterima. Jika belum habis, pastikan kemasan tertutup rapat agar kualitas tetap terjaga.' },
-      { q: 'Minimal order?', a: 'Minimal order bisa fleksibel tergantung area pengiriman. Untuk reseller, tersedia penawaran pembelian partai.' },
-      { q: 'Apakah halal?', a: 'Ya, bahan yang digunakan dipilih dengan standar halal dan proses produksi dijaga kebersihannya.' },
-      { q: 'Bisa jadi reseller?', a: 'Bisa. Landing page ini sudah menonjolkan value untuk reseller dan UMKM, jadi sangat cocok untuk akuisisi mitra baru.' }
-    ];
-
-    const iconSvgs = {
-      sparkles: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l1.8 4.2L18 9l-4.2 1.8L12 15l-1.8-4.2L6 9l4.2-1.8L12 3Z"></path><path d="M5 17l.9 2.1L8 20l-2.1.9L5 23l-.9-2.1L2 20l2.1-.9L5 17Z"></path><path d="M19 14l1.1 2.6L23 17.7l-2.9 1.1L19 21.4l-1.1-2.6L15 17.7l2.9-1.1L19 14Z"></path></svg>',
-      'chef-hat': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 18h12"></path><path d="M7 18v-5"></path><path d="M17 18v-5"></path><path d="M18 13a4 4 0 0 0 .2-8 5.5 5.5 0 0 0-10.4 1A3.5 3.5 0 0 0 6 13h12Z"></path></svg>',
-      store: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l2-5h14l2 5"></path><path d="M4 9h16v10H4z"></path><path d="M9 19v-6h6v6"></path></svg>',
-      wallet: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M19 7H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2Z"></path><path d="M16 12h.01"></path><path d="M7 7V5a2 2 0 0 1 2-2h8"></path></svg>',
-      snowflake: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20"></path><path d="m4.93 6.93 14.14 14.14"></path><path d="m19.07 6.93-14.14 14.14"></path><path d="M2 12h20"></path></svg>',
-      'utensils-crossed': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m16 2 6 6"></path><path d="m11 7 6 6"></path><path d="m2 22 8-8"></path><path d="m17 17 5 5"></path><path d="M14 4 4 14"></path></svg>'
-    };
-
-    const waLink = (message) => `https://wa.me/${brandConfig.whatsappNumber}?text=${encodeURIComponent(message)}`;
-
-    function setupThemeToggle() {
-      const root = document.documentElement;
-      const toggle = document.querySelector('[data-theme-toggle]');
-      let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      root.setAttribute('data-theme', theme);
-      const renderIcon = () => {
-        toggle.innerHTML = theme === 'dark'
-          ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>'
-          : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
-      };
-      renderIcon();
-      toggle.addEventListener('click', () => {
-        theme = theme === 'dark' ? 'light' : 'dark';
-        root.setAttribute('data-theme', theme);
-        renderIcon();
+      const loadingOverlay = document.getElementById('loadingOverlay');
+      window.addEventListener('load', () => {
+        setTimeout(() => loadingOverlay.classList.add('hidden'), 500);
       });
-    }
 
-    function renderAdvantages() {
-      const el = document.getElementById('advantagesGrid');
-      el.innerHTML = advantages.map(item => `
-        <article class="card-hover rounded-[1.5rem] border border-black/5 bg-white p-6 shadow-card dark:border-white/10 dark:bg-white/5">
-          <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-red-50 to-orange-100 text-accent-600 dark:from-red-500/10 dark:to-orange-500/10">${iconSvgs[item.icon]}</div>
-          <h3 class="text-xl font-bold tracking-tight">${item.title}</h3>
-          <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">${item.desc}</p>
-        </article>
-      `).join('');
-    }
+      const menuToggle = document.getElementById('menuToggle');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const mobileLinks = document.querySelectorAll('.mobile-nav');
+      menuToggle?.addEventListener('click', () => {
+        const isOpen = !mobileMenu.classList.contains('hidden');
+        mobileMenu.classList.toggle('hidden');
+        menuToggle.setAttribute('aria-expanded', String(!isOpen));
+      });
+      mobileLinks.forEach(link => link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }));
 
-    function renderProducts() {
-      const grid = document.getElementById('productsGrid');
-      grid.innerHTML = products.map((product, idx) => `
-        <article class="card-hover group overflow-hidden rounded-[1.8rem] border border-black/5 bg-white shadow-card dark:border-white/10 dark:bg-white/5">
-          <div class="relative overflow-hidden">
-            <img src="${product.image}" alt="${product.name}" width="640" height="520" loading="lazy" decoding="async" class="h-60 w-full object-cover transition duration-500 group-hover:scale-105" />
-            <span class="absolute left-4 top-4 rounded-full bg-white/92 px-3 py-1 text-xs font-black uppercase tracking-[0.16em] text-accent-600 shadow-soft dark:bg-[#20140f]/92">${product.badge}</span>
-          </div>
-          <div class="p-6">
-            <div class="flex items-start justify-between gap-3">
-              <div>
-                <h3 class="text-xl font-bold tracking-tight">${product.name}</h3>
-                <p class="mt-2 text-sm leading-7 text-slate-600 dark:text-slate-300">${product.desc}</p>
-              </div>
-              <span class="rounded-full bg-orange-100 px-3 py-1 text-xs font-bold text-orange-700 dark:bg-orange-400/10 dark:text-orange-200">${idx < 2 ? 'Hot' : 'Ready'}</span>
-            </div>
-            <div class="mt-5 flex items-center justify-between gap-3">
-              <div>
-                <p class="text-xs uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">Mulai dari</p>
-                <p class="text-2xl font-black text-accent-600">${product.price}</p>
-              </div>
-              <a href="${waLink(`Halo ${brandConfig.brandName}, saya ingin pesan ${product.name}. Mohon info stok, harga, dan promo terbaru ya.`)}" target="_blank" rel="noopener noreferrer" class="btn-lift inline-flex min-h-[48px] items-center justify-center rounded-full bg-accent-500 px-5 py-3 text-sm font-bold text-white shadow-soft hover:bg-accent-600">Pesan via WhatsApp</a>
-            </div>
-          </div>
-        </article>
-      `).join('');
-    }
-
-    function renderSteps() {
-      const el = document.getElementById('orderSteps');
-      el.innerHTML = steps.map((item, idx) => `
-        <article class="relative rounded-[1.6rem] border border-black/5 bg-white p-6 shadow-card dark:border-white/10 dark:bg-white/5">
-          ${idx < steps.length - 1 ? '<span class="absolute right-[-12px] top-1/2 hidden h-0.5 w-6 bg-orange-200 lg:block"></span>' : ''}
-          <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-accent-500 to-brand-500 text-sm font-black text-white">${item.step}</span>
-          <h3 class="mt-5 text-xl font-bold tracking-tight">${item.title}</h3>
-          <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">${item.desc}</p>
-        </article>
-      `).join('');
-    }
-
-    function renderPromos() {
-      const el = document.getElementById('promoGrid');
-      el.innerHTML = promos.map(item => `
-        <article class="rounded-[1.4rem] border border-white/15 bg-white/10 p-5 backdrop-blur">
-          <h3 class="text-lg font-bold">${item.title}</h3>
-          <p class="mt-2 text-sm leading-7 text-white/80">${item.desc}</p>
-        </article>
-      `).join('');
-    }
-
-    function renderFaqs() {
-      const wrap = document.getElementById('faqList');
-      wrap.innerHTML = faqs.map((faq, index) => `
-        <article class="overflow-hidden rounded-[1.4rem] border border-black/5 bg-white shadow-card dark:border-white/10 dark:bg-white/5">
-          <button class="faq-trigger flex min-h-[60px] w-full items-center justify-between gap-4 px-5 py-4 text-left" aria-expanded="${index === 0 ? 'true' : 'false'}">
-            <span class="text-base font-bold">${faq.q}</span>
-            <span class="text-2xl text-accent-600">+</span>
-          </button>
-          <div class="faq-content px-5 ${index === 0 ? 'pb-5' : ''}" style="max-height:${index === 0 ? '220px' : '0px'}">
-            <p class="text-sm leading-7 text-slate-600 dark:text-slate-300">${faq.a}</p>
-          </div>
-        </article>
-      `).join('');
-
-      wrap.querySelectorAll('.faq-trigger').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const expanded = btn.getAttribute('aria-expanded') === 'true';
-          wrap.querySelectorAll('.faq-trigger').forEach(other => {
-            other.setAttribute('aria-expanded', 'false');
-            other.querySelector('span:last-child').textContent = '+';
-            const panel = other.nextElementSibling;
-            panel.style.maxHeight = '0px';
-            panel.classList.remove('pb-5');
-          });
-          if (!expanded) {
-            btn.setAttribute('aria-expanded', 'true');
-            btn.querySelector('span:last-child').textContent = '–';
-            const panel = btn.nextElementSibling;
-            panel.classList.add('pb-5');
-            panel.style.maxHeight = panel.scrollHeight + 32 + 'px';
+      const header = document.getElementById('siteHeader');
+      const navLinks = document.querySelectorAll('.nav-link');
+      const sections = [...document.querySelectorAll('main section[id]')];
+      const updateActiveNav = () => {
+        const scrollY = window.scrollY + 120;
+        if (window.scrollY > 12) header.classList.add('backdrop-blur-xl');
+        else header.classList.remove('backdrop-blur-xl');
+        sections.forEach(section => {
+          const top = section.offsetTop;
+          const height = section.offsetHeight;
+          if (scrollY >= top && scrollY < top + height) {
+            navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${section.id}`));
           }
         });
-      });
-    }
+      };
+      updateActiveNav();
+      window.addEventListener('scroll', updateActiveNav, { passive: true });
 
-    function renderTestimonials() {
-      const track = document.getElementById('testimonialTrack');
-      const dots = document.getElementById('testimonialDots');
-      let current = 0;
-
-      track.innerHTML = testimonials.map(item => `
-        <article class="min-w-full px-1">
-          <div class="grid gap-6 rounded-[1.6rem] bg-gradient-to-br from-white to-orange-50 p-6 dark:from-white/5 dark:to-orange-500/5 lg:grid-cols-[auto_1fr] lg:p-8">
-            <img src="${item.avatar}" alt="Avatar ${item.name}" width="120" height="120" loading="lazy" decoding="async" class="h-20 w-20 rounded-full object-cover ring-4 ring-white shadow-soft" />
-            <div>
-              <div class="flex flex-wrap items-center gap-3">
-                <h3 class="text-xl font-bold">${item.name}</h3>
-                <span class="rounded-full bg-orange-100 px-3 py-1 text-xs font-bold text-orange-700 dark:bg-orange-400/10 dark:text-orange-200">${item.city}</span>
-              </div>
-              <div class="mt-3 flex gap-1 text-orange-400">${'★'.repeat(item.rating)}</div>
-              <p class="mt-4 max-w-3xl text-base leading-8 text-slate-700 dark:text-slate-200">“${item.comment}”</p>
-            </div>
-          </div>
-        </article>
-      `).join('');
-
-      dots.innerHTML = testimonials.map((_, idx) => `<button class="dot h-2.5 w-2.5 rounded-full ${idx === 0 ? 'bg-accent-500 w-8' : 'bg-slate-300 dark:bg-white/20'} transition-all" aria-label="Ke testimoni ${idx + 1}"></button>`).join('');
-      const dotEls = [...dots.querySelectorAll('.dot')];
-
-      const updateSlider = () => {
-        track.style.transform = `translateX(-${current * 100}%)`;
-        dotEls.forEach((dot, idx) => {
-          dot.className = `dot h-2.5 rounded-full transition-all ${idx === current ? 'bg-accent-500 w-8' : 'bg-slate-300 dark:bg-white/20 w-2.5'}`;
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const target = document.querySelector(this.getAttribute('href'));
+          if (!target) return;
+          e.preventDefault();
+          const top = target.getBoundingClientRect().top + window.scrollY - 92;
+          window.scrollTo({ top, behavior: 'smooth' });
         });
+      });
+
+      const revealItems = document.querySelectorAll('.reveal');
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.14 });
+      revealItems.forEach(item => revealObserver.observe(item));
+
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(item => {
+        const trigger = item.querySelector('.faq-trigger');
+        const icon = item.querySelector('.faq-icon');
+        trigger.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+          faqItems.forEach(other => {
+            other.classList.remove('active');
+            other.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+            other.querySelector('.faq-icon').setAttribute('data-lucide', 'plus');
+          });
+          if (!isActive) {
+            item.classList.add('active');
+            trigger.setAttribute('aria-expanded', 'true');
+            icon.setAttribute('data-lucide', 'minus');
+          }
+          if (window.lucide) lucide.createIcons();
+        });
+      });
+
+      const targetDate = new Date();
+      targetDate.setDate(targetDate.getDate() + 5);
+      targetDate.setHours(23, 59, 59, 999);
+      const countdown = () => {
+        const now = new Date().getTime();
+        const distance = targetDate.getTime() - now;
+        const d = Math.max(0, Math.floor(distance / (1000 * 60 * 60 * 24)));
+        const h = Math.max(0, Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+        const m = Math.max(0, Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
+        const s = Math.max(0, Math.floor((distance % (1000 * 60)) / 1000));
+        document.getElementById('days').textContent = String(d).padStart(2, '0');
+        document.getElementById('hours').textContent = String(h).padStart(2, '0');
+        document.getElementById('minutes').textContent = String(m).padStart(2, '0');
+        document.getElementById('seconds').textContent = String(s).padStart(2, '0');
+      };
+      countdown();
+      setInterval(countdown, 1000);
+
+      const fakeOrders = [
+        { name: 'Nadia', menu: 'Classic Italian Tiramisu', city: 'Jakarta Selatan', time: '1 menit lalu' },
+        { name: 'Raka', menu: 'Pistachio Dream Tiramisu', city: 'Bandung', time: '3 menit lalu' },
+        { name: 'Maya', menu: 'Lotus Biscoff Tiramisu', city: 'Bekasi', time: 'Baru saja' },
+        { name: 'Dimas', menu: 'Sharing Box Classic', city: 'Tangerang', time: '5 menit lalu' },
+        { name: 'Lia', menu: '2 Personal Box Bundle', city: 'Surabaya', time: '2 menit lalu' },
+        { name: 'Kevin', menu: 'Lotus Biscoff Sharing Box', city: 'Depok', time: '4 menit lalu' }
+      ];
+
+      const popup = document.getElementById('liveOrderPopup');
+      const closePopup = document.getElementById('closePopup');
+      const orderName = document.getElementById('orderName');
+      const orderMenu = document.getElementById('orderMenu');
+      const orderCity = document.getElementById('orderCity');
+      const orderTime = document.getElementById('orderTime');
+      let popupIndex = 0;
+      let popupDismissed = false;
+
+      const showFakeOrder = () => {
+        if (popupDismissed) return;
+        const item = fakeOrders[popupIndex % fakeOrders.length];
+        orderName.textContent = item.name;
+        orderMenu.textContent = item.menu;
+        orderCity.textContent = item.city;
+        orderTime.textContent = item.time;
+        popup.classList.add('show');
+        setTimeout(() => popup.classList.remove('show'), 4200);
+        popupIndex += 1;
       };
 
-      document.getElementById('prevTestimonial').addEventListener('click', () => {
-        current = (current - 1 + testimonials.length) % testimonials.length;
-        updateSlider();
+      setTimeout(showFakeOrder, 2500);
+      setInterval(showFakeOrder, 7000);
+
+      closePopup?.addEventListener('click', () => {
+        popupDismissed = true;
+        popup.classList.remove('show');
       });
-      document.getElementById('nextTestimonial').addEventListener('click', () => {
-        current = (current + 1) % testimonials.length;
-        updateSlider();
-      });
-      dotEls.forEach((dot, idx) => dot.addEventListener('click', () => {
-        current = idx;
-        updateSlider();
-      }));
-      setInterval(() => {
-        current = (current + 1) % testimonials.length;
-        updateSlider();
-      }, 4500);
-    }
 
-    function setupMenu() {
-      const menuBtn = document.getElementById('menuBtn');
-      const mobileMenu = document.getElementById('mobileMenu');
-      menuBtn.addEventListener('click', () => {
-        const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
-        menuBtn.setAttribute('aria-expanded', String(!expanded));
-        mobileMenu.classList.toggle('hidden');
-      });
-      mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-        menuBtn.setAttribute('aria-expanded', 'false');
-      }));
-    }
+      const testimonialTrack = document.getElementById('testimonialTrack');
+      const prevBtn = document.getElementById('prevTestimonial');
+      const nextBtn = document.getElementById('nextTestimonial');
+      const testimonialItems = Array.from(testimonialTrack.children);
+      let testimonialIndex = 0;
 
-    function setupScrollReveal() {
-      const items = document.querySelectorAll('.section-fade');
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) entry.target.classList.add('in-view');
-        });
-      }, { threshold: 0.12 });
-      items.forEach(item => io.observe(item));
-    }
-
-    function setupGlobalWaLinks() {
-      const url = waLink(brandConfig.defaultMessage);
-      ['heroWaBtn','navWaBtn','mobileWaBtn','closingWaBtn','floatingWaBtn','footerWaBtn'].forEach(id => {
-        const el = document.getElementById(id);
-        if (!el) return;
-        el.href = url;
-        if (id !== 'footerWaBtn') {
-          el.target = '_blank';
-          el.rel = 'noopener noreferrer';
-        }
-      });
-    }
-
-    function setupCurrentYear() {
-      document.title = `${brandConfig.brandName} | Tinggal Kukus & Siap Dinikmati`;
-    }
-
-    renderAdvantages();
-    renderProducts();
-    renderSteps();
-    renderPromos();
-    renderFaqs();
-    renderTestimonials();
-    setupThemeToggle();
-    setupMenu();
-    setupScrollReveal();
-    setupGlobalWaLinks();
-    setupCurrentYear();
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FoodEstablishment",
-    "name": "Dimsumku Premium",
-    "description": "Dimsum frozen premium halal untuk keluarga, reseller, anak kos, dan UMKM kuliner.",
-    "servesCuisine": "Dimsum",
-    "priceRange": "Rp22.000 - Rp31.000",
-    "telephone": "+62 812-3456-7890",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Jl. Contoh Kuliner No. 88",
-      "addressLocality": "Kota Anda",
-      "addressCountry": "ID"
-    },
-    "sameAs": [
-      "https://instagram.com",
-      "https://www.tiktok.com",
-      "https://facebook.com"
-    ]
-  }
+      const getVisibleTestimonials = () => window.innerWidth >= 768 ? 3 : 1;
+      const updateTestimonialSlider = () => {
+        const visible = getVisibleTestimonials();
+        const maxIndex = Math.max(0, testimonialItems.length - visible);
+        if (testimonialIndex > maxIndex) testimonialIndex = 0;
+        const translate = -(100 / visible) * testimonialIndex;
+        testimonialTrack.style.transform = `translateX(${translate}%)`;
+      };
+      const nextTestimonial = () => {
+        const visible = getVisibleTestimonials();
+        const maxIndex = Math.max(0, testimonialItems.length - visible);
+        testimonialIndex = testimonialIndex >= maxIndex ? 0 : testimonialIndex + 1;
+        updateTestimonialSlider();
+      };
+      const prevTestimonial = () => {
+        const visible = getVisibleTestimonials();
+        const maxIndex = Math.max(0, testimonialItems.length - visible);
+        testimonialIndex = testimonialIndex <= 0 ? maxIndex : testimonialIndex - 1;
+        updateTestimonialSlider();
+      };
+      nextBtn?.addEventListener('click', nextTestimonial);
+      prevBtn?.addEventListener('click', prevTestimonial);
+      window.addEventListener('resize', updateTestimonialSlider);
+      updateTestimonialSlider();
+      setInterval(nextTestimonial, 5000);
+    });
   </script>
 </body>
 </html>
