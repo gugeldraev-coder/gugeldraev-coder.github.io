@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Bakery Mata Biru Lamno - Premium Culinary Experience</title>
+    <meta name="description" content="Nikmati perpaduan sempurna dari kehangatan khas Mie Bangladesh, Kebab Premium, dan Martabak Telur Spesial di Cafe Bakery Mata Biru Lamno. Tempat nongkrong modern paling estetik di Lamno.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#0A1128',
+                        'navy-light': '#0F1C3F',
+                        'navy-dark': '#050A18',
+                        gold: '#D4AF37',
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body { background-color: #0A1128; color: #FDFBF7; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float { animation: float 4s ease-in-out infinite; }
+        .animate-float-delayed { animation: float 4s ease-in-out infinite; animation-delay: 2s; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="overflow-x-hidden selection:bg-blue-600 selection:text-white">
+
+    <div id="loading-screen" class="fixed inset-0 z-50 flex items-center justify-center bg-navy transition-opacity duration-500">
+        <div class="text-center">
+            <div class="w-16 h-16 border-4 border-blue-400 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+            <p class="font-serif italic text-xl text-[#F4EFE6] tracking-widest">Mata Biru Lamno</p>
+        </div>
+    </div>
+
+    <a href="https://wa.me/6281234567890?text=Halo%20Mata%20Biru%20Lamno,%20saya%20tertarik%20order" target="_blank" class="fixed bottom-6 right-6 z-40 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform hidden md:flex border border-white/20">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <div class="fixed bottom-0 left-0 right-0 z-40 bg-navy/90 backdrop-blur-md border-t border-blue-900/40 p-3 flex gap-3 md:hidden">
+        <a href="#menu" class="w-1/2 bg-blue-900/40 border border-blue-700/50 text-center py-3 rounded-xl text-xs font-semibold tracking-wider text-blue-200">
+            <i class="fas fa-utensils mr-2"></i>LIHAT MENU
+        </a>
+        <a href="https://wa.me/6281234567890" target="_blank" class="w-1/2 bg-blue-600 hover:bg-blue-700 text-center py-3 rounded-xl text-xs font-semibold tracking-wider text-white flex items-center justify-center shadow-lg">
+            <i class="fab fa-whatsapp text-sm mr-2"></i>PESAN
+        </a>
+    </div>
+
+    <div id="live-order-popup" class="fixed bottom-20 left-4 md:bottom-6 md:left-6 z-40 bg-navy-light border border-blue-900/60 p-4 rounded-2xl shadow-2xl flex items-center gap-3 max-w-sm transform translate-y-20 opacity-0 transition-all duration-500 pointer-events-none">
+        <div class="w-10 h-10 bg-blue-900/50 rounded-xl flex items-center justify-center text-blue-400 shrink-0">
+            <i class="fas fa-bolt text-lg"></i>
+        </div>
+        <div>
+            <p class="text-xs text-blue-300 font-medium tracking-wide uppercase">Live Order 🎉</p>
+            <p id="live-order-text" class="text-sm text-[#FDFBF7] mt-0.5 font-normal"></p>
+        </div>
+    </div>
+
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 py-6 px-4 md:px-12 bg-transparent">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="#" class="flex flex-col">
+                <span class="font-serif text-xl md:text-2xl font-bold tracking-wide text-white leading-none">MATA BIRU</span>
+                <span class="text-[9px] tracking-[0.3em] text-blue-400 font-semibold uppercase mt-1">Cafe & Bakery Lamno</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
+                <a href="#" class="text-white hover:text-blue-400 transition-colors">Home</a>
+                <a href="#menu" class="text-slate-300 hover:text-blue-400 transition-colors">Menu</a>
+                <a href="#promo" class="text-slate-300 hover:text-blue-400 transition-colors">Promo</a>
+                <a href="#gallery" class="text-slate-300 hover:text-blue-400 transition-colors">Galeri</a>
+                <a href="#lokasi" class="text-slate-300 hover:text-blue-400 transition-colors">Lokasi</a>
+                <a href="#faq" class="text-slate-300 hover:text-blue-400 transition-colors">FAQ</a>
+            </div>
+            <div class="hidden md:block">
+                <a href="https://wa.me/6281234567890" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider transition-all duration-300 shadow-lg shadow-blue-900/40">ORDER SEKARANG</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none p-2">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        <div id="mobile-drawer" class="fixed inset-0 top-[72px] bg-navy/98 backdrop-blur-xl z-30 transition-transform duration-300 translate-x-full md:hidden flex flex-col p-8 gap-6 border-t border-blue-950">
+            <a href="#menu" class="mobile-link text-xl font-serif text-white border-b border-blue-950 pb-2">Menu</a>
+            <a href="#promo" class="mobile-link text-xl font-serif text-white border-b border-blue-950 pb-2">Promo</a>
+            <a href="#gallery" class="mobile-link text-xl font-serif text-white border-b border-blue-950 pb-2">Galeri</a>
+            <a href="#lokasi" class="mobile-link text-xl font-serif text-white border-b border-blue-950 pb-2">Lokasi</a>
+        </div>
+    </nav>
+
+    <header class="relative w-full min-h-[92vh] md:min-h-screen flex items-center justify-center overflow-hidden pt-16">
+        <div class="absolute inset-0 z-0">
+            <img src="img-lamno-sudut-ruang-cozy.png" alt="Cafe Backdrop" class="w-full h-full object-cover object-center transform scale-105 animate-[pulse_6s_infinite_alternate]">
+            <div class="absolute inset-0 bg-gradient-to-b from-navy/50 via-navy/80 to-navy"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-navy/90 via-transparent to-navy/40"></div>
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto w-full px-4 md:px-12 flex flex-col justify-between h-full py-12 md:py-20">
+            <div class="flex flex-wrap gap-2 mb-8 md:mb-12 mt-10">
+                <span class="bg-blue-500/10 backdrop-blur-md border border-blue-500/30 text-blue-300 text-[10px] md:text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider"><i class="fas fa-fire-alt mr-1 text-amber-400"></i> Favorit Lamno</span>
+                <span class="bg-amber-500/10 backdrop-blur-md border border-amber-500/30 text-amber-200 text-[10px] md:text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider"><i class="fas fa-star mr-1 text-amber-400"></i> Fresh Daily</span>
+            </div>
+            <div class="max-w-2xl mt-auto">
+                <h1 class="font-serif text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-white leading-[1.1] mb-4">
+                    Menu Andalan <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-sky-300 to-[#F4EFE6]">Mata Biru Lamno</span>
+                </h1>
+                <p class="text-slate-300 text-sm md:text-lg tracking-wide font-light mb-8 max-w-lg leading-relaxed">Tempat Nongkrong Asik, Kuliner Lezat Menggugah Selera!</p>
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                    <a href="https://wa.me/6281234567890" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl text-sm font-bold tracking-wider shadow-xl shadow-blue-900/50 flex items-center justify-center gap-3">
+                        <i class="fab fa-whatsapp text-lg"></i> PESAN WHATSAPP
+                    </a>
+                    <a href="#menu" class="border border-slate-500/50 hover:border-white text-white px-6 py-4 rounded-xl text-sm font-semibold tracking-wider flex items-center justify-center backdrop-blur-sm bg-white/5">Jelajahi Menu</a>
+                </div>
+            </div>
+            <div class="mt-12 md:mt-16 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 w-full border-t border-slate-800/60 pt-8">
+                <div class="animate-float bg-gradient-to-br from-navy-light to-navy border border-blue-900/60 p-4 rounded-2xl flex items-center gap-3.5 max-w-xs shadow-2xl">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-400 shrink-0"><i class="fas fa-percentage text-xl"></i></div>
+                    <div><span class="text-[10px] text-blue-400 font-bold uppercase tracking-widest block">PROMO MINGGU INI</span><p class="text-xs text-[#FDFBF7] font-medium mt-0.5">Diskon 10% Mie Bangladesh + Kebab</p></div>
+                </div>
+                <div class="animate-float-delayed flex items-center gap-3 bg-navy/80 border border-slate-800 backdrop-blur-md px-5 py-3.5 rounded-2xl shadow-xl">
+                    <div class="flex flex-col">
+                        <div class="flex items-center gap-1 text-amber-400 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <span class="text-[11px] text-slate-400 font-medium mt-1">1,200+ review</span>
+                    </div>
+                    <div class="text-2xl font-serif font-bold text-white border-l border-slate-800 pl-3">4.9<span class="text-xs text-slate-400 font-sans font-light">/5</span></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="border-y border-blue-950 bg-[#070D1F] py-8 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="grid grid-cols-3 gap-4 md:gap-12 w-full md:w-auto text-center md:text-left divide-x divide-blue-950/60 md:divide-none">
+                <div><p class="text-2xl md:text-4xl font-serif font-bold text-white">5000+</p><p class="text-[10px] text-blue-400 mt-1 uppercase">Pelanggan Puas</p></div>
+                <div><p class="text-2xl md:text-4xl font-serif font-bold text-white">10k+</p><p class="text-[10px] text-blue-400 mt-1 uppercase">Porsi Terjual</p></div>
+                <div><p class="text-2xl md:text-4xl font-serif font-bold text-white">4.9/5</p><p class="text-[10px] text-blue-400 mt-1 uppercase">Rating Google</p></div>
+            </div>
+            <div class="flex gap-6 opacity-40 grayscale transition hover:grayscale-0 hover:opacity-70">
+                <span class="text-xs font-bold tracking-[0.2em] text-slate-400 uppercase">PARTNER :</span>
+                <span class="font-semibold text-white"><i class="fas fa-motorcycle text-blue-400"></i> GoFood</span>
+                <span class="font-semibold text-white"><i class="fas fa-store text-orange-400"></i> ShopeeFood</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="reveal py-20 px-4 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="relative group">
+                <img src="img-lamno-kumpul-santai.png" alt="Story" class="rounded-2xl shadow-2xl w-full aspect-[4/3] object-cover">
+                <div class="absolute -bottom-6 -right-4 bg-[#F4EFE6] text-navy p-5 rounded-xl max-w-xs shadow-xl hidden sm:block"><p class="font-serif italic font-semibold">"Tempat ternyaman untuk menikmati sore di Lamno."</p></div>
+            </div>
+            <div>
+                <span class="text-blue-400 text-xs font-bold tracking-[0.2em] uppercase mb-3 block">STORY OF MATA BIRU</span>
+                <h2 class="font-serif text-3xl font-bold text-white mb-6">Lebih Dari Sekadar Rasa.</h2>
+                <p class="text-slate-300 font-light mb-6">Nikmati perpaduan sempurna dari kehangatan khas Mie Bangladesh, kelembutan Kebab Manis & Daging, hingga gurihnya Martabak Telur yang cocok menemani santai Anda.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="reveal bg-[#070D1F] border-y border-blue-950 py-24 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between gap-6 mb-16">
+                <h2 class="font-serif text-3xl md:text-5xl font-bold text-white">Menu Eksklusif</h2>
+                <div class="flex flex-wrap gap-2 p-1 bg-navy border border-blue-950 rounded-xl">
+                    <button onclick="filterMenu('semua', this)" class="menu-tab-btn bg-blue-600 text-white px-4 py-2 rounded-lg text-xs font-semibold">Semua</button>
+                    <button onclick="filterMenu('berat', this)" class="menu-tab-btn text-slate-400 px-4 py-2 rounded-lg text-xs font-semibold">Makanan Berat</button>
+                    <button onclick="filterMenu('bakery', this)" class="menu-tab-btn text-slate-400 px-4 py-2 rounded-lg text-xs font-semibold">Jajanan & Bakery</button>
+                </div>
+            </div>
+            <div id="menu-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="menu-item border border-blue-900/30 rounded-2xl overflow-hidden bg-navy group" data-category="berat">
+                    <div class="aspect-[4/3] relative overflow-hidden"><img src="img-lamno-2.png" alt="Mie" class="w-full h-full object-cover group-hover:scale-105 transition"><span class="absolute top-4 left-4 bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded">BEST SELLER</span></div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-xl font-bold text-white mb-2">Mie Bangladesh</h3>
+                        <p class="text-xs text-slate-400 mb-4">Mie rempah khas kental dengan telur setengah matang.</p>
+                        <div class="flex justify-between items-center"><span class="font-bold text-amber-200">Rp 15.000+</span> <a href="https://wa.me/6281234567890?text=Pesan%20Mie%20Bangladesh" class="bg-blue-600 p-2 rounded-lg text-white"><i class="fab fa-whatsapp"></i></a></div>
+                    </div>
+                </div>
+                <div class="menu-item border border-blue-900/30 rounded-2xl overflow-hidden bg-navy group" data-category="bakery">
+                    <div class="aspect-[4/3] relative overflow-hidden"><img src="img-lamno-3.png" alt="Kebab" class="w-full h-full object-cover group-hover:scale-105 transition"></div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-xl font-bold text-white mb-2">Kebab Daging Premium</h3>
+                        <p class="text-xs text-slate-400 mb-4">Daging sapi melimpah dengan racikan saus spesial.</p>
+                        <div class="flex justify-between items-center"><span class="font-bold text-amber-200">Rp 15.000+</span> <a href="https://wa.me/6281234567890?text=Pesan%20Kebab" class="bg-blue-600 p-2 rounded-lg text-white"><i class="fab fa-whatsapp"></i></a></div>
+                    </div>
+                </div>
+                <div class="menu-item border border-blue-900/30 rounded-2xl overflow-hidden bg-navy group" data-category="berat">
+                    <div class="aspect-[4/3] relative overflow-hidden"><img src="img-lamno-4.png" alt="Martabak" class="w-full h-full object-cover group-hover:scale-105 transition"></div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-xl font-bold text-white mb-2">Martabak Telur</h3>
+                        <p class="text-xs text-slate-400 mb-4">Kulit renyah, daging melimpah, telur bebek gurih.</p>
+                        <div class="flex justify-between items-center"><span class="font-bold text-amber-200">Rp 18.000+</span> <a href="https://wa.me/6281234567890?text=Pesan%20Martabak" class="bg-blue-600 p-2 rounded-lg text-white"><i class="fab fa-whatsapp"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reveal py-24 px-4 max-w-7xl mx-auto">
+        <h2 class="font-serif text-3xl font-bold text-white mb-10 text-center">Menu Favorit Pilihan</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <div class="lg:col-span-7 bg-[#070D1F] border border-blue-950 rounded-3xl p-8 relative min-h-[400px] flex flex-col justify-end group overflow-hidden">
+                <img src="img-lamno-2.png" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 transition">
+                <div class="absolute inset-0 bg-gradient-to-t from-navy to-transparent"></div>
+                <div class="relative z-10"><span class="bg-amber-400 text-black text-[10px] px-3 py-1 rounded-full font-bold mb-4 inline-block">ULTIMATE</span><h3 class="font-serif text-3xl font-bold text-white mb-4">Mie Bangladesh Authentic</h3><a href="https://wa.me/6281234567890" class="bg-blue-600 text-white px-5 py-3 rounded-xl text-xs inline-block">Pesan Sekarang</a></div>
+            </div>
+            <div class="lg:col-span-5 flex flex-col gap-6">
+                <div class="bg-[#070D1F] border border-blue-950 p-5 rounded-2xl flex gap-4 items-center">
+                    <img src="img-lamno-5.png" class="w-24 h-24 rounded-xl object-cover">
+                    <div><h4 class="font-serif text-lg font-bold text-white">Kebab Daging Premium</h4><span class="text-amber-200 text-xs">Mulai Rp 15.000</span></div>
+                </div>
+                <div class="bg-[#070D1F] border border-blue-950 p-5 rounded-2xl flex gap-4 items-center">
+                    <img src="img-lamno-6.png" class="w-24 h-24 rounded-xl object-cover">
+                    <div><h4 class="font-serif text-lg font-bold text-white">Martabak Telur Spesial</h4><span class="text-amber-200 text-xs">Mulai Rp 18.000</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="reveal bg-[#070D1F] py-24 px-4 border-y border-blue-950">
+        <h2 class="font-serif text-3xl font-bold text-white mb-10 text-center">Suasana Cafe</h2>
+        <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[160px] md:auto-rows-[220px]">
+            <div class="rounded-2xl overflow-hidden col-span-2 row-span-2"><img src="img-lamno-sudut-ruang-cozy.png" class="w-full h-full object-cover"></div>
+            <div class="rounded-2xl overflow-hidden"><img src="img-lamno-etalase-fresh.png" class="w-full h-full object-cover"></div>
+            <div class="rounded-2xl overflow-hidden row-span-2"><img src="img-lamno-5.png" class="w-full h-full object-cover"></div>
+            <div class="rounded-2xl overflow-hidden"><img src="img-lamno-8.png" class="w-full h-full object-cover"></div>
+        </div>
+    </section>
+
+    <section id="promo" class="reveal py-24 px-4 max-w-5xl mx-auto">
+        <div class="bg-gradient-to-br from-navy-light to-navy border border-blue-900/60 p-8 md:p-14 rounded-3xl grid lg:grid-cols-2 gap-10">
+            <div>
+                <span class="bg-amber-500/10 text-amber-300 text-[10px] font-bold px-3 py-1 rounded-full mb-4 inline-block">LIMITED TIME</span>
+                <h3 class="font-serif text-3xl font-bold text-white mb-4">Combo: Mie Bangladesh + Kebab</h3>
+                <p class="text-slate-300 mb-6 text-sm">Diskon 10% untuk dine-in / takeaway minggu ini saja.</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="grid grid-cols-3 gap-3 mb-6 w-full max-w-xs text-center">
+                    <div class="bg-navy border border-blue-900/40 p-3 rounded-xl"><span id="hours" class="text-3xl font-bold">00</span><p class="text-[9px]">JAM</p></div>
+                    <div class="bg-navy border border-blue-900/40 p-3 rounded-xl"><span id="mins" class="text-3xl font-bold">00</span><p class="text-[9px]">MENIT</p></div>
+                    <div class="bg-navy border border-blue-900/40 p-3 rounded-xl"><span id="secs" class="text-3xl font-bold">00</span><p class="text-[9px]">DETIK</p></div>
+                </div>
+                <a href="https://wa.me/6281234567890" class="bg-blue-600 text-white w-full max-w-xs text-center py-3 rounded-xl text-xs font-bold">KLAIM PROMO WA</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="reveal bg-[#070D1F] py-24 px-4 border-y border-blue-950">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="font-serif text-3xl font-bold text-white mb-10 text-center">FAQ</h2>
+            <div class="space-y-4">
+                <div class="border border-blue-950 rounded-2xl bg-navy"><button class="w-full p-5 text-left font-serif font-bold text-white" onclick="this.nextElementSibling.classList.toggle('hidden')">Jam Buka?</button><div class="hidden p-5 border-t border-blue-950 text-slate-400 text-sm">Buka setiap hari jam 10.00 - 23.00 WIB.</div></div>
+                <div class="border border-blue-950 rounded-2xl bg-navy"><button class="w-full p-5 text-left font-serif font-bold text-white" onclick="this.nextElementSibling.classList.toggle('hidden')">Bisa Delivery / Takeaway?</button><div class="hidden p-5 border-t border-blue-950 text-slate-400 text-sm">Ya, bisa order via WA untuk dibungkus atau dikirim, juga ada di GoFood/GrabFood.</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="lokasi" class="reveal py-24 px-4 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12">
+        <div>
+            <h2 class="font-serif text-3xl font-bold text-white mb-6">Lokasi Strategis</h2>
+            <p class="text-sm text-slate-300 mb-6">Lamno, Kabupaten Aceh Jaya, Aceh, Indonesia.</p>
+            <a href="http://maps.google.com" target="_blank" class="bg-blue-600 text-white px-5 py-3 rounded-xl text-xs">BUKA MAPS</a>
+        </div>
+        <div class="bg-navy border border-blue-950 rounded-3xl p-6 flex flex-col items-center justify-center min-h-[250px] text-center">
+            <i class="fas fa-map-marked-alt text-4xl text-blue-400 mb-4 animate-bounce"></i>
+            <h4 class="font-serif text-xl font-bold text-white mb-2">Google Maps Area</h4>
+        </div>
+    </section>
+
+    <footer class="bg-navy-dark border-t border-blue-950 text-slate-400 py-16 px-4 text-center">
+        <h2 class="font-serif text-2xl font-bold text-white mb-4">MATA BIRU LAMNO</h2>
+        <div class="flex justify-center gap-4 mb-6">
+            <a href="#" class="w-10 h-10 rounded-full bg-blue-900/50 flex items-center justify-center text-white"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-blue-900/50 flex items-center justify-center text-white"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <p class="text-xs">© 2026 Cafe Bakery Mata Biru Lamno. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Loader & Navbar
+        window.addEventListener('DOMContentLoaded', () => setTimeout(() => document.getElementById('loading-screen').style.display='none', 800));
+        window.addEventListener('scroll', () => { document.getElementById('navbar').classList.toggle('bg-navy/95', window.scrollY > 50); });
+        
+        // Mobile Menu
+        document.getElementById('mobile-menu-btn').onclick = () => document.getElementById('mobile-drawer').classList.toggle('translate-x-full');
+        
+        // Menu Filter
+        function filterMenu(cat, btn) {
+            document.querySelectorAll('.menu-tab-btn').forEach(b => { b.classList.remove('bg-blue-600','text-white'); b.classList.add('text-slate-400'); });
+            btn.classList.add('bg-blue-600','text-white'); btn.classList.remove('text-slate-400');
+            document.querySelectorAll('.menu-item').forEach(i => { i.style.display = (cat==='semua' || i.dataset.category===cat) ? 'block' : 'none'; });
+        }
+
+        // Live Order
+        const pop = document.getElementById('live-order-popup');
+        setInterval(() => {
+            document.getElementById('live-order-text').innerText = "Pelanggan baru saja memesan Mie Bangladesh! 🍜";
+            pop.classList.remove('translate-y-20','opacity-0');
+            setTimeout(() => pop.classList.add('translate-y-20','opacity-0'), 4000);
+        }, 12000);
+
+        // Countdown
+        setInterval(() => {
+            let d = new Date(); d.setHours(23,59,59);
+            let diff = d - new Date();
+            document.getElementById('hours').innerText = String(Math.floor(diff/(1000*60*60))).padStart(2,'0');
+            document.getElementById('mins').innerText = String(Math.floor((diff%(1000*60*60))/(1000*60))).padStart(2,'0');
+            document.getElementById('secs').innerText = String(Math.floor((diff%(1000*60))/1000)).padStart(2,'0');
+        }, 1000);
+
+        // Reveal Scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('active'); });
+        });
+        document.querySelectorAll('.reveal').forEach(s => observer.observe(s));
+    </script>
+</body>
+</html>
